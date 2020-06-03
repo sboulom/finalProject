@@ -1,0 +1,15 @@
+.jumbo {
+    background: url("../../assets/beerImage.jpg");
+    /* background: url("assets/images/beerImage.jpg"); */
+    /* height: 800px; */
+    /* object-fit: cover; */
+    max-height: 100%;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    /* background-size: cover; */
+}
+.display {
+    height: 100px;
+}
+
