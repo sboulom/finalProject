@@ -17,7 +17,7 @@ import './index.css'
 
 function NavigationBar(){
    return(
-    <div>
+    <div className="navBar">
     <Navbar bg="dark" variant="dark"></Navbar>
     <Navbar.Brand href= "/">BeerTopia</Navbar.Brand>
     <Navbar.Collapse id="basic-navbar-nav" />
