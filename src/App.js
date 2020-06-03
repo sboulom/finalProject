@@ -2,6 +2,7 @@ import React from "react";
 // import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
+import BrowseBeers from "./pages/BrowseBeers";
 import { NavigationBar } from "./components/NavigationBar";
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
     <React.Fragment>
       <NavigationBar />
       <Router>
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route path="/browse" component={BrowseBeers} />
+          <Route exact path="/" component={Home} />
+        </Switch>
       </Router>
     </React.Fragment>
   );
