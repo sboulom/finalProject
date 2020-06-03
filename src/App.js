@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -10,12 +11,14 @@ function App() {
   return (
     <React.Fragment>
       <NavigationBar />
+
       <Jumbotron />
         <Router>
         <Route exact path ='/' component = {Home} />
     
     
-    
+
+
       </Router>
     </React.Fragment>
   );
