@@ -4,7 +4,6 @@ import "../SignInPage/signIn.css"
 function signIn(){
     return(
         <div className="signInButton">
-                {/* Will we use jQuery to dynamically create functions? */}
                 <label>
                     Email Address
                 </label>
