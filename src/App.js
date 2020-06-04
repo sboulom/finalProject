@@ -17,6 +17,7 @@ function App() {
           <Route path="/register" componenet={Register} />
           <Route path="/browse" component={BrowseBeers} />
           <Route exact path="/" component={Home} />
+          
         </Switch>
       </Router>
     </React.Fragment>
