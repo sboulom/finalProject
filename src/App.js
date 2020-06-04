@@ -6,6 +6,7 @@ import NavigationBar from "./components/NavigationBar";
 import BrowseBeers from "./pages/BrowseBeers";
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
+import Jumbotron from "./components/Jumbotron"
 
 function App() {
   return (
