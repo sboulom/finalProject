@@ -4,12 +4,12 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 
 function selectBeers() {
-  useEffect(() => {
-    API.getBeers().then((res) => {
-      console.log(res);
-    });
-    console.log("useEffect has been called");
-  }, []);
+  // useEffect(() => {
+  //   API.getBeers().then((res) => {
+  //     console.log(res);
+  //   });
+  //   console.log("useEffect has been called");
+  // }, []);
 
   return (
     <Container>

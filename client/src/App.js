@@ -6,8 +6,8 @@ import NavigationBar from "./components/NavigationBar";
 import BrowseBeers from "./pages/BrowseBeers";
 import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
-import Jumbotron from "./components/Jumbotron"
-import UserProfile from "./pages/UserProfile"
+import Jumbotron from "./components/Jumbotron";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
