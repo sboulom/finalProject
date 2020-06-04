@@ -1,5 +1,7 @@
-import React from "react";
+// import React from "react";
 
-const Signin = () => {
-    
-}
+const SignIn = () => {
+  return console.log("This is SignIn");
+};
+
+export default SignIn;

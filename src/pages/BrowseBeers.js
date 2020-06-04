@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+import { useEffect } from "react";
+import API from "../utils/API.js";
 
 const BrowseBeers = () => {
   // const []
@@ -14,7 +13,3 @@ const BrowseBeers = () => {
 };
 
 export default BrowseBeers;
-=======
-import React from "react";
-
->>>>>>> e6f3acb9297d4465d8a7d789ecc91d43fdb8326e
