@@ -15,3 +15,9 @@ export default {
     );
   },
 };
+
+// export default {
+//   getBeers: function(query) {
+//     return axios.get("/api/beers", { params: { q: query } });
+//   }
+// };
