@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 
-function selectBeers() {
+function BrowseBeers() {
   // useEffect(() => {
   //   API.getBeers().then((res) => {
   //     console.log(res);
@@ -37,4 +37,4 @@ function selectBeers() {
   );
 }
 
-export default selectBeers;
+export default BrowseBeers;
