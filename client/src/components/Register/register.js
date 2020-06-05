@@ -1,6 +1,6 @@
 import React from "react";
 
-function registration() {
+function Register() {
     return(
         <div className="register">
             <label>
@@ -19,4 +19,4 @@ function registration() {
     )
 }
 
-export default registration;
+export default Register;
