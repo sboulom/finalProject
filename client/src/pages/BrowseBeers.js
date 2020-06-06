@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
@@ -10,6 +10,16 @@ function BrowseBeers() {
   //   });
   //   console.log("useEffect has been called");
   // }, []);
+
+  const [beers, setBeers] = useState([]);
+  const [beerSearch, setBeerSearch] = useState("");
+
+ 
+  setBeerSearch("");
+
+  API.getBeers(beerSearch)
+    .then(res => setBeers(res.data))
+    .catch(err => console.log(err));
 
   return (
     <Container>
