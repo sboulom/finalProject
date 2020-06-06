@@ -5,12 +5,16 @@ import API from "../utils/API.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
-  // useEffect(() => {
-  //   API.getBeers().then((res) => {
-  //     console.log(res);
-  //   });
-  //   console.log("useEffect has been called");
-  // }, []);
+  useEffect(() => {
+    API.getBeers()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log("useEffect has been called");
+  }, []);
 
   return (
     <Container>
