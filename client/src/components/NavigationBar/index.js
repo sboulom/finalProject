@@ -3,19 +3,10 @@ import { Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
 import Jumbotron from "../Jumbotron";
 
-const Styles = styled.div`
-  .navbar {
-    background-color: #222;
 
-    &:hover {
-      color: #8b0000;
-    }
-  }
-`;
 export const NavigationBar = () => (
-  <Styles>
-    <Navbar.Brand href="/">BeerTopia</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <div>
+    {/* <Navbar.Brand href="/">BeerTopia</Navbar.Brand> */}
     <Navbar.Collapse id="basic-navbar-nav" />
     <Nav className="ml-auto">
       <Nav.Item>
@@ -29,5 +20,5 @@ export const NavigationBar = () => (
       </Nav.Item>
     </Nav>
     <Jumbotron />
-  </Styles>
+ </div>
 );
