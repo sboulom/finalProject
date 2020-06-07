@@ -28,6 +28,7 @@ function BrowseBeers() {
                   {/* Information below will be populated dynamically once we get the API working */}
                   <Card.Img variant="top" src="holder.js/100px160" />
                   <Card.Body>
+                      <h3><i class="fas fa-plus-circle"></i></h3>
                     <Card.Title>Name of Beer</Card.Title>
                     <Card.Text>
                       <ul>

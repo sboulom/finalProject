@@ -5,6 +5,9 @@
     justify-content: space-between;
 
 }
+.userWrapper{
+    padding-top: 20vh;
+}
 .card-title {
     border:thick;
     color: black;
