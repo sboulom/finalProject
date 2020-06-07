@@ -1,11 +1,14 @@
 .navbar {
     background-color:#ffbf00;  
-    flex-direction: row;
+    /* flex-direction: row; */
+    text-align: right;
+    /* width: 100%; */
 }
 
 .nav-link {
     display: inline;
 }
+
 /* icon color  */
 .fas {
     color: teal;

@@ -4,7 +4,7 @@ import './UserProfile.css'
 
 function UserProfile() {
   return (
-    <Container>
+    <Container className='userWrapper'>
       <h1> User Profile</h1>
       <Row>
         <Col>
