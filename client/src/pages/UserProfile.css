@@ -1,0 +1,28 @@
+.userBeer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.card-title {
+    border:thick;
+    color: black;
+
+}
+.card{
+    background-color: white;
+    box-shadow: 5px 10px 8px #888888;
+}
+.Container{
+    position: absolute;
+    z-index: 1;
+}
+
+h1 {
+    color: white;
+}
+
+ul{
+    color: black;
+}

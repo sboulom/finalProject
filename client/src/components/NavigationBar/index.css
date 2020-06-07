@@ -1,5 +1,13 @@
-.NavigationBar {
-    background-color: red;
-    text-align: right;
-    
+.navbar {
+    background-color:#ffbf00;  
+    flex-direction: row;
+}
+
+.nav-link {
+    display: inline;
+}
+/* icon color  */
+.fas {
+    color: teal;
+
 }

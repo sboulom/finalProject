@@ -1,24 +1,20 @@
-import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
-import styled from "styled-components";
-import Jumbotron from "../Jumbotron";
-
+import React from 'react'
+import {Nav, Navbar} from 'react-bootstrap'
+import Jumbotron from '../Jumbotron'
+import './index.css'
 
 export const NavigationBar = () => (
-  <div>
-    {/* <Navbar.Brand href="/">BeerTopia</Navbar.Brand> */}
-    <Navbar.Collapse id="basic-navbar-nav" />
-    <Nav className="ml-auto">
-      <Nav.Item>
-        <Nav.Link href="/">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/Contact">Rate Your Beer</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/Beer">Beer</Nav.Link>
-      </Nav.Item>
-    </Nav>
-    <Jumbotron />
- </div>
-);
+  <div className='navbar navbar-expand'>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto" />
+        <Nav.Link href="/"><i class="fas fa-home"></i></Nav.Link>
+        <Nav.Link href='/'><i class="fas fa-house-user"></i></Nav.Link>
+        <Nav.Link href='/Browse'><i class="fas fa-beer"></i></Nav.Link>
+        <Nav.Link href='/signin'>Sign In</Nav.Link>
+        <Nav.Link href='/register'>Register</Nav.Link>
+      </Navbar.Collapse>
+    </Navbar>
+  </div>
+)

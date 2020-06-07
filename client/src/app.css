@@ -1,0 +1,6 @@
+.wrapper{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: url('/assets/beerImage.jpg');
+    height: 100vh;
+}

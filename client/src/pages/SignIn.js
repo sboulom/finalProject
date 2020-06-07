@@ -1,7 +1,11 @@
-// import React from "react";
+import React from "react";
 
 const SignIn = () => {
-  return console.log("This is SignIn");
+  return (
+  <div>
+    <p>Hello</p>
+  </div>
+  )
 };
 
 export default SignIn;
