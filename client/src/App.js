@@ -6,10 +6,11 @@ import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
+import "./app.css";
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="wrapper">
       <NavigationBar />
       <Router>
         <Switch>
@@ -20,7 +21,7 @@ function App() {
           <Route exact path="/" component={UserProfile} />
         </Switch>
       </Router>
-    </React.Fragment>
+    </div>
   );
 }
 
