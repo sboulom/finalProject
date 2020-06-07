@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
+import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
+  const [beers, setBeers] = useState([]);
+  const [beerSearch, setBeerSearch] = useState("");
+
+  
   useEffect(() => {
-    API.getBeers()
+    DB.getBeers()
       .then((res) => {
         console.log(res);
       })
@@ -15,6 +20,15 @@ function BrowseBeers() {
       });
     console.log("useEffect has been called");
   }, []);
+
+  
+
+ 
+  // setBeerSearch("");
+
+  // DB.getBeers(beerSearch)
+  //   .then(res => setBeers(res.data))
+  //   .catch(err => console.log(err));
 
   return (
     <Container>
@@ -30,12 +44,13 @@ function BrowseBeers() {
                   <Card.Body>
                       <h3><i class="fas fa-plus-circle"></i></h3>
                     <Card.Title>Name of Beer</Card.Title>
+                    <Card.Title>{Beer.name}</Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>Beer Stlye</li>
-                        <li>ABV</li>
-                        <li>Excerpt of Description</li>
-                        <li>Category</li>
+                        <li>Beer Stlye: {Beer.beerStyle}</li>
+                        <li>ABV: {Beer.abv}</li>
+                        <li>Excerpt of Description: {Beer.shortDesc}</li>
+                        <li>Category: {Beer.beerCategory}</li>
                       </ul>
                     </Card.Text>
                   </Card.Body>
