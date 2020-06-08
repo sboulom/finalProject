@@ -31,16 +31,16 @@ function BrowseBeers() {
   //   .catch(err => console.log(err));
 
   return (
-    <Container>
+    <Container className="browseBeer">
       <h1>Browse Beer</h1>
       <Row>
         <Col>
           <div className="beerContainer">
             {[1, 2, 3, 4, 5].map((Beer) => {
               return (
-                <Card>
+                <Card className="beerCard">
                   {/* Information below will be populated dynamically once we get the API working */}
-                  <Card.Img variant="top" src="holder.js/100px160" />
+                  <Card.Img variant="top" src="holder.js/100px160" className="cardImage"/>
                   <Card.Body>
                       <h3><i class="fas fa-plus-circle"></i></h3>
                     <Card.Title>Name of Beer</Card.Title>
