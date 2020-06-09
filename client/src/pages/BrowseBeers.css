@@ -3,4 +3,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Courier Prime', monospace;
 }
+
+.browseBeer {
+    padding-top: 20vh;
+}
+
+.beerCard {
+    background-color: #fcaf14;
+    margin: 1%;
+}
+
+/* Card image  */
+/* .cardImage {
+    width: 60;
+    height: 60; 
+    border-radius: 20px 60px;
+} */
