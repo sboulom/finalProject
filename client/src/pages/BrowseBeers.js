@@ -42,7 +42,7 @@ function BrowseBeers() {
                   {/* Information below will be populated dynamically once we get the API working */}
                   <Card.Img variant="top" src="holder.js/100px160" className="cardImage"/>
                   <Card.Body>
-                      <h3><i class="fas fa-plus-circle"></i></h3>
+                      <h3><i className="fas fa-plus-circle" id="addBeer"></i></h3>
                     <Card.Title>Name of Beer</Card.Title>
                     <Card.Title>{Beer.name}</Card.Title>
                     <Card.Text>
@@ -65,3 +65,5 @@ function BrowseBeers() {
 }
 
 export default BrowseBeers;
+
+// document.getElementById("addBeer").onclick = function(){console.log('Beer Added')}
