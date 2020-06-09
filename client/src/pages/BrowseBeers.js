@@ -35,15 +35,21 @@ function BrowseBeers() {
   //   .catch(err => console.log(err));
 
   return (
-    <Container>
+    <Container className="browseBeer">
       <h1>Browse Beer</h1>
       <Row>
         <Col>
           <div className="beerContainer">
             {beers.data.slice(0, 5).map((beer, index) => {
               return (
+<<<<<<< HEAD
                 <Card>
                   <Card.Img variant="top" src="" />
+=======
+                <Card className="beerCard">
+                  {/* Information below will be populated dynamically once we get the API working */}
+                  <Card.Img variant="top" src="holder.js/100px160" className="cardImage"/>
+>>>>>>> 7e1817b9d8045139e020bf685e092a7a52a0a96a
                   <Card.Body>
                     <h3>
                       <i class="fas fa-plus-circle"></i>
