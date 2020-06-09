@@ -50,12 +50,7 @@ function BrowseBeers() {
             {beers.data.slice(0, 5).map((beer, index) => {
               return (
                 <Card className="beerCard">
-                  {/* Information below will be populated dynamically once we get the API working */}
-                  <Card.Img
-                    variant="top"
-                    src="holder.js/100px160"
-                    className="cardImage"
-                  />
+                  <Card.Img variant="top" src="" className="cardImage" />
                   <Card.Body>
                     <h3>
                       <i class="fas fa-plus-circle"></i>
