@@ -6,25 +6,36 @@ import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
-  const [beers, setBeers] = useState([]);
-  const [beerSearch, setBeerSearch] = useState("");
+  const [beers, setBeers] = useState({ data: [] });
+  // const [Description, setDescription] = useState();
+  // const [StyleDescription, setStyleDescription] = useState();
+  // const [beerSearch, setBeerSearch] = useState("");
 
-  
   useEffect(() => {
-    DB.getBeers()
+    // DB.getBeers()
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    API.getBeers()
       .then((res) => {
-        console.log(res);
+        setBeers(res.data);
+        // console.log(res.data.data[0]);
+        // res.data.data.slice(0, 2).map((beer, index) => {
+        //   if (beer.description == null) {
+        //     return beer.style.description;
+        //   } else {
+        //     return beer.description;
+        //   }
+        // });
       })
       .catch((err) => {
         console.log(err);
       });
     console.log("useEffect has been called");
   }, []);
-
-  
-
- 
-  // setBeerSearch("");
 
   // DB.getBeers(beerSearch)
   //   .then(res => setBeers(res.data))
@@ -36,21 +47,22 @@ function BrowseBeers() {
       <Row>
         <Col>
           <div className="beerContainer">
-            {[1, 2, 3, 4, 5].map((Beer) => {
+            {beers.data.slice(0, 5).map((beer, index) => {
               return (
                 <Card className="beerCard">
-                  {/* Information below will be populated dynamically once we get the API working */}
-                  <Card.Img variant="top" src="holder.js/100px160" className="cardImage"/>
+                  <Card.Img variant="top" src="" className="cardImage" />
                   <Card.Body>
-                      <h3><i className="fas fa-plus-circle" id="addBeer"></i></h3>
-                    <Card.Title>Name of Beer</Card.Title>
-                    <Card.Title>{Beer.name}</Card.Title>
+                    <h3>
+                      <i class="fas fa-plus-circle"></i>
+                    </h3>
+                    {/* <Card.Title>Name of Beer</Card.Title> */}
+                    <Card.Title>{beer.name}</Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>Beer Stlye: {Beer.beerStyle}</li>
-                        <li>ABV: {Beer.abv}</li>
-                        <li>Excerpt of Description: {Beer.shortDesc}</li>
-                        <li>Category: {Beer.beerCategory}</li>
+                        <li>Beer Style: {beer.style.name}</li>
+                        <li>ABV: {beer.abv}%</li>
+                        <li>Excerpt of Description: {}</li>
+                        <li>Category: {beer.style.category.name}</li>
                       </ul>
                     </Card.Text>
                   </Card.Body>
