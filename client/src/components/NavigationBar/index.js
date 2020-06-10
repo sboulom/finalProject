@@ -1,7 +1,7 @@
-import React from 'react'
-import {Nav, Navbar} from 'react-bootstrap'
-import Jumbotron from '../Jumbotron'
-import './index.css'
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+// import Jumbotron from '../Jumbotron'
+import "./index.css";
 
 export const NavigationBar = () => (
   <div className='navbar navbar-expand'>
@@ -17,4 +17,4 @@ export const NavigationBar = () => (
       </Navbar.Collapse>
     </Navbar>
   </div>
-)
+);
