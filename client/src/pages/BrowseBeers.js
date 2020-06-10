@@ -42,38 +42,46 @@ function BrowseBeers() {
   //   .catch(err => console.log(err));
 
   return (
-    <Container className="browseBeer">
-      <h1>Browse Beer</h1>
+    // <Container className="browseBeer">
+    //   <h1>Browse Beer</h1>
+    //   <Row>
+    //     <Col>
+    //       <div className="beerContainer">
+    <Container>
       <Row>
-        <Col>
-          <div className="beerContainer">
-            {beers.data.slice(0, 2).map((beer, index) => {
-              return (
-                <Card className="beerCard">
-                  <Card.Img variant="top" src="" className="cardImage" />
-                  <Card.Body>
-                    <h3>
-                      <i class="fas fa-plus-circle"></i>
-                    </h3>
-                    {/* <Card.Title>Name of Beer</Card.Title> */}
-                    <Card.Title>{beer.name}</Card.Title>
-                    <Card.Title style={{ fontSize: 13 }}>
-                      {beer.style.name} | {beer.abv}% ABV
-                    </Card.Title>
-                    <Card.Text>
-                      <ul>
-                        <li>Region/Type: {beer.style.category.name}</li>
-                        <li>Excerpt of Description: {}</li>
-                      </ul>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              );
-            })}
-          </div>
-        </Col>
+        {beers.data.slice(0, 10).map((beer, index) => {
+          return (
+            <Col>
+              <Card className="beerCard">
+                <Card.Img variant="top" src="" className="cardImage" />
+                <Card.Body>
+                  <h3>
+                    <i class="fas fa-plus-circle"></i>
+                  </h3>
+                  {/* <Card.Title>Name of Beer</Card.Title> */}
+                  <Card.Title>{beer.name}</Card.Title>
+                  <Card.Title style={{ fontSize: 13 }}>
+                    {beer.style.name} | {beer.abv}% ABV
+                  </Card.Title>
+                  <Card.Text>
+                    <ul>
+                      <li>Region/Type: {beer.style.category.name}</li>
+                      <li>Description: {}</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
       </Row>
     </Container>
+    // );
+    //       </div>
+    //     </Col>
+    //   </Row>
+    // </Container>
+    // );
   );
 }
 
