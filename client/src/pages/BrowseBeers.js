@@ -51,7 +51,7 @@ function BrowseBeers() {
       <Row>
         {beers.data.slice(0, 10).map((beer, index) => {
           return (
-            <Col>
+            <Col xs={12} sm={12} md={6} lg={2} xl={2}>
               <Card className="beerCard">
                 <Card.Img variant="top" src="" className="cardImage" />
                 <Card.Body>
@@ -64,10 +64,8 @@ function BrowseBeers() {
                     {beer.style.name} | {beer.abv}% ABV
                   </Card.Title>
                   <Card.Text>
-                    <ul>
-                      <li>Region/Type: {beer.style.category.name}</li>
-                      <li>Description: {}</li>
-                    </ul>
+                    Region/Type: {beer.style.category.name}
+                    Description: {}
                   </Card.Text>
                 </Card.Body>
               </Card>
