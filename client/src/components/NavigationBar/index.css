@@ -18,6 +18,11 @@
 /* icon color  */
 .fas {
     color: teal;
+    
 
+}
+
+Nav.Link {
+    hover: red;
 }
 

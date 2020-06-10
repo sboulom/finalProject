@@ -5,6 +5,9 @@ import './UserProfile.css'
 function UserProfile() {
   return (
     <Container className='userWrapper'>
+        <div>
+          <h1 className='statsDiv'>Stats</h1>
+        </div>
       <h1> User Profile</h1>
       <Row>
         <Col>
