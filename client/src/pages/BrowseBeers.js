@@ -78,3 +78,5 @@ function BrowseBeers() {
 }
 
 export default BrowseBeers;
+
+// document.getElementById("addBeer").onclick = function(){console.log('Beer Added')}
