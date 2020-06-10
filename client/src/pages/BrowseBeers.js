@@ -62,7 +62,7 @@ function BrowseBeers() {
                     </Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>Category: {beer.style.category.name}</li>
+                        <li>Region/Type: {beer.style.category.name}</li>
                         <li>Excerpt of Description: {}</li>
                       </ul>
                     </Card.Text>
