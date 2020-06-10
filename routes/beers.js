@@ -19,8 +19,21 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
+  const picture = req.body.picture;
   const name = req.body.name;
-  const newBeer = new Beer({ name });
+  const beerStyle = req.body.beerStyle;
+  const abv = Number(req.body.abv);
+  const beerCategory = req.body.beerCategory;
+  const shortDesc = req.body.shortDesc;
+
+  const newBeer = new Beer({
+    picture,
+    name,
+    beerStyle,
+    abv,
+    beerCategory,
+    shortDesc,
+  });
   newBeer
     .save()
     .then(() => res.json("BeerTest added!"))
