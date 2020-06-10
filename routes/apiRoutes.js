@@ -1,6 +1,5 @@
 const router = require("express").Router();
-let Beer = require("../models/beer");
-// const db = require("../models");
+const db = require("../models");
 
 // router.get("/", (req, res) => {
 //   // Use a regular expression to search titles for req.query.q
@@ -13,17 +12,23 @@ let Beer = require("../models/beer");
 // });
 
 router.route("/").get((req, res) => {
-  Beer.find()
+  db.Beer.find()
     .then((beers) => res.json(beers))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/add").post((req, res) => {
   const name = req.body.name;
-  const newBeer = new Beer({ name });
+  const newBeer = new db.Beer({ name });
   newBeer
     .save()
     .then(() => res.json("BeerTest added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/beers").get((req, res) => {
+  db.Beer.find()
+    .then((beers) => res.json(beers))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
