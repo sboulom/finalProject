@@ -52,4 +52,22 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
+router.route("/update/:id").put((req, res) => {
+  Beer.findById(req.params.id)
+    .then((beer) => {
+      beer.picture = req.body.picture;
+      beer.name = req.body.name;
+      beer.beerStyle = req.body.beerStyle;
+      beer.abv = Number(req.body.abv);
+      beer.beerCategory = req.body.beerCategory;
+      beer.shortDesc = req.body.shortDesc;
+
+      beer
+        .save()
+        .then(() => res.json("Beer card updated!"))
+        .catch((err) => res.status(400).json("Error: " + err));
+    })
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 module.exports = router;
