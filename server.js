@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
-const apiRoutes = require("./routes/apiRoutes");
+const beersRouter = require("./routes/beers");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +25,7 @@ connection.once("open", function () {
   console.log("MongoDB database connection established successfully");
 });
 
-app.use("/api", apiRoutes);
+app.use("/beers", beersRouter);
 
 // Send every request to the React app
 // Define any API routes before this runs
