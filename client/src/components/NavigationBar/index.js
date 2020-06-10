@@ -1,20 +1,26 @@
-import React from 'react'
-import {Nav, Navbar} from 'react-bootstrap'
-import Jumbotron from '../Jumbotron'
-import './index.css'
+import React from "react";
+import { Nav, Navbar } from "react-bootstrap";
+// import Jumbotron from '../Jumbotron'
+import "./index.css";
 
 export const NavigationBar = () => (
-  <div className='navbar navbar-expand'>
+  <div className="navbar navbar-expand">
     <Navbar bg="light" expand="lg">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto" />
-        <Nav.Link href="/"><i class="fas fa-home"></i></Nav.Link>
-        <Nav.Link href='/'><i class="fas fa-house-user"></i></Nav.Link>
-        <Nav.Link href='/Browse'><i class="fas fa-beer"></i></Nav.Link>
-        <Nav.Link href='/signin'>Sign In</Nav.Link>
-        <Nav.Link href='/register'>Register</Nav.Link>
+        <Nav.Link href="/">
+          <i class="fas fa-home"></i>
+        </Nav.Link>
+        <Nav.Link href="/">
+          <i class="fas fa-house-user"></i>
+        </Nav.Link>
+        <Nav.Link href="/Browse">
+          <i class="fas fa-beer"></i>
+        </Nav.Link>
+        <Nav.Link href="/signin">Sign In</Nav.Link>
+        <Nav.Link href="/register">Register</Nav.Link>
       </Navbar.Collapse>
     </Navbar>
   </div>
-)
+);

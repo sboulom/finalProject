@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
-import DB from "../utils/DB.js";
+// import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
