@@ -5,9 +5,13 @@ import './UserProfile.css'
 function UserProfile() {
   return (
     <Container className='userWrapper'>
+        <div>
+          <h1 className='statsDiv'>Stats</h1>
+        </div>
       <h1> User Profile</h1>
       <Row>
         <Col>
+        {/* xs ={12} sm={12} md={6} */}
         <div className="userBeer">
         {[1, 2, 3, 4, 5].map((Beer) => {
               return (

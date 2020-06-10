@@ -3,6 +3,12 @@
     /* flex-direction: row; */
     text-align: right;
     /* width: 100%; */
+  
+}
+
+.innerNavbar {
+    border-radius: 25px;
+    /* background-color: #FAE96F */
 }
 
 .nav-link {
@@ -12,6 +18,11 @@
 /* icon color  */
 .fas {
     color: teal;
+    
 
+}
+
+Nav.Link {
+    hover: red;
 }
 

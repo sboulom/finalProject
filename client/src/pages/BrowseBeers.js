@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
-import DB from "../utils/DB.js";
+// import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
@@ -47,7 +47,7 @@ function BrowseBeers() {
       <Row>
         <Col>
           <div className="beerContainer">
-            {beers.data.slice(0, 5).map((beer, index) => {
+            {beers.data.slice(0, 2).map((beer, index) => {
               return (
                 <Card className="beerCard">
                   <Card.Img variant="top" src="" className="cardImage" />
@@ -57,12 +57,13 @@ function BrowseBeers() {
                     </h3>
                     {/* <Card.Title>Name of Beer</Card.Title> */}
                     <Card.Title>{beer.name}</Card.Title>
+                    <Card.Title style={{ fontSize: 13 }}>
+                      {beer.style.name} | {beer.abv}% ABV
+                    </Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>Beer Style: {beer.style.name}</li>
-                        <li>ABV: {beer.abv}%</li>
+                        <li>Region/Type: {beer.style.category.name}</li>
                         <li>Excerpt of Description: {}</li>
-                        <li>Category: {beer.style.category.name}</li>
                       </ul>
                     </Card.Text>
                   </Card.Body>
@@ -77,3 +78,5 @@ function BrowseBeers() {
 }
 
 export default BrowseBeers;
+
+// document.getElementById("addBeer").onclick = function(){console.log('Beer Added')}
