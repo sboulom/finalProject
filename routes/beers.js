@@ -36,7 +36,7 @@ router.route("/add").post((req, res) => {
   });
   newBeer
     .save()
-    .then(() => res.json("BeerTest added!"))
+    .then(() => res.json("Beer card added!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
