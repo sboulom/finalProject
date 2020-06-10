@@ -1,18 +1,18 @@
 .beerContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Courier Prime', monospace;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Courier Prime", monospace;
 }
 
 .browseBeer {
-    padding-top: 20vh;
+  padding-top: 20vh;
 }
 
 .beerCard {
-    background-color: #fcaf14;
-    margin: 1%;
+  background-color: #fcaf14;
+  /* margin: 1%; */
 }
 
 /* Card image  */

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, CardGroup, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 // import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
@@ -47,38 +47,27 @@ function BrowseBeers() {
     //   <Row>
     //     <Col>
     //       <div className="beerContainer">
-    <Container>
-      <Row>
-        {beers.data.slice(0, 10).map((beer, index) => {
-          return (
-            <Col xs={12} sm={12} md={6} lg={2} xl={2}>
-              <Card className="beerCard">
-                <Card.Img variant="top" src="" className="cardImage" />
-                <Card.Body>
-                  <h3>
-                    <i class="fas fa-plus-circle"></i>
-                  </h3>
-                  {/* <Card.Title>Name of Beer</Card.Title> */}
-                  <Card.Title>{beer.name}</Card.Title>
-                  <Card.Title style={{ fontSize: 13 }}>
-                    {beer.style.name} | {beer.abv}% ABV
-                  </Card.Title>
-                  <Card.Text>
-                    Region/Type: {beer.style.category.name}
-                    Description: {}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          );
-        })}
-      </Row>
-    </Container>
-    // );
-    //       </div>
-    //     </Col>
-    //   </Row>
-    // </Container>
+    <CardGroup>
+      {beers.data.slice(0, 6).map((beer, index) => {
+        return (
+          <Card className="beerCard">
+            <Card.Img variant="top" src="" className="cardImage" />
+            <Card.Body>
+              <h3>
+                <i class="fas fa-plus-circle"></i>
+              </h3>
+              {/* <Card.Title>Name of Beer</Card.Title> */}
+              <Card.Title>{beer.name}</Card.Title>
+              <Card.Title style={{ fontSize: 13 }}>
+                {beer.style.name} | {beer.abv}% ABV
+              </Card.Title>
+              <Card.Text mx>Region/Type: {beer.style.category.name}</Card.Text>
+              <Card.Text>Description: {}</Card.Text>
+            </Card.Body>
+          </Card>
+        );
+      })}
+    </CardGroup>
     // );
   );
 }
