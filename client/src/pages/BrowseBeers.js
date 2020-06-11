@@ -50,9 +50,9 @@ function BrowseBeers() {
     // <CardGroup xs={12} sm={12} md={6} lg={2} xl={2}>
     <Container>
       <Row>
-        {beers.data.slice(0, 6).map((beer, index) => {
-          return (
-            <Col xs={12} sm={12} md={6} lg={2} xl={2} className="px-0">
+        <Col>
+          {beers.data.slice(0, 6).map((beer, index) => {
+            return (
               <Card className="beerCard">
                 <Card.Img variant="top" src="" className="cardImage" />
                 <Card.Body>
@@ -70,9 +70,9 @@ function BrowseBeers() {
                   <Card.Text>Description: {}</Card.Text>
                 </Card.Body>
               </Card>
-            </Col>
-          );
-        })}
+            );
+          })}
+        </Col>
       </Row>
     </Container>
     // </CardGroup>
