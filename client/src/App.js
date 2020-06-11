@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import "./app.css";
+// import SearchBar from "./components/SearchBar/searchBar";
 // import beerImage from "../public/assets/beerImage2.jpg";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           {/* <div class="lds-circle"><div></div></div> */}
           </Route>
         </Switch>
+        {/* <SearchBar /> */}
       </Router>
     </div>
   );

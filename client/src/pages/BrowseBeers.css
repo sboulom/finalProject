@@ -17,6 +17,9 @@
 
 /* Card image  */
 .cardImage {
-    margin: auto;
-    
+    margin: auto;    
+}
+
+.searchBar {
+    align-items: center;
 }

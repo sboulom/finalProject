@@ -43,7 +43,12 @@ function BrowseBeers() {
 
   return (
     <Container className="browseBeer">
+      <div>
       <h1>Browse Beer</h1>
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search..." name="search" className="searchBar"/>
+      </form>
+      </div>
       <Row>
         <Col>
           <div className="beerContainer">
