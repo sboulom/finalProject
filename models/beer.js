@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 
-const beerSchema = new Schema({
+const beerSchema = new mongoose.Schema({
   picture: {
     //name of a picture that we could then grab from local files? Or possibly a url?
     type: String,

@@ -4,6 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const beersRouter = require("./routes/beers");
+const apiRoutes = require("./routes/apiRoutes");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -15,8 +16,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
-  useUnifiedTopology: true,
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/reactbeers", 
+  { useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
 });
@@ -26,6 +28,7 @@ connection.once("open", function () {
 });
 
 app.use("/beers", beersRouter);
+app.use("/api", apiRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs

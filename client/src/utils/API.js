@@ -8,8 +8,8 @@ export default {
     );
   },
 
-  getBeersLocal: function() {
-    return axios.get("/api/beers", {params: {}});
+  getBeersLocal: function(query) {
+    return axios.get("/api/beers", { params: { q: query } });
   }
 };
 
