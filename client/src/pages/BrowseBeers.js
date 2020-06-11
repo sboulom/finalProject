@@ -90,25 +90,29 @@ function BrowseBeers() {
         {beers.data.slice(0, 12).map((beer, index) => {
           return (
             <Col xs={12} sm={12} md={6} lg={2} xl={2} className="my-1 px-0">
-              <Card className="beerCard">
-                <Card.Title className="ml-auto">
-                  <h4>
-                    <i class="fas fa-plus-circle"></i>
-                  </h4>
-                </Card.Title>
-                <Card.Img
-                  variant="top"
-                  src="./assets/pixelMug.jpg"
-                  className="cardImage mx-auto"
-                />
-                <Card.Body>
-                  <Card.Title>{beer.name}</Card.Title>
-                  <Card.Title style={{ fontSize: 13 }}>
-                    {beer.style.name} | {beer.abv}% ABV
+              <Card className="cardHeight">
+                <Card className="cardHeight cardColor">
+                  <Card.Title className="ml-auto">
+                    <h4>
+                      <i className="fas fa-plus-circle"></i>
+                    </h4>
                   </Card.Title>
-                  <Card.Text>Region/Type: {beer.style.category.name}</Card.Text>
-                  <Card.Text>Description: {}</Card.Text>
-                </Card.Body>
+                  <Card.Img
+                    variant="top"
+                    src="./assets/pixelMug.jpg"
+                    className="cardImage mx-auto"
+                  />
+                  <Card.Body>
+                    <Card.Title>{beer.name}</Card.Title>
+                    <Card.Title style={{ fontSize: 13 }}>
+                      {beer.style.name} | {beer.abv}% ABV
+                    </Card.Title>
+                    <Card.Text>
+                      Region/Type: {beer.style.category.name}
+                    </Card.Text>
+                    <Card.Text>Description: {}</Card.Text>
+                  </Card.Body>
+                </Card>
               </Card>
             </Col>
           );

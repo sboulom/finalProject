@@ -10,9 +10,12 @@
   padding-top: 20vh;
 }
 
-.beerCard {
+.cardHeight {
   height: 100%;
-  background-color: #fcaf14;
+}
+
+.cardColor {
+  background-color: beige;
 }
 
 /* Card image  */
