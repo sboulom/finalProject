@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, CardGroup, Card } from "react-bootstrap";
 import API from "../utils/API.js";
+import Input from "../components/Input";
+import Button from "../components/Button";
 // import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
   const [beers, setBeers] = useState({ data: [] });
+  const [beerSearch, setBeerSearch] = useState("");
   // const [Description, setDescription] = useState();
   // const [StyleDescription, setStyleDescription] = useState();
-  // const [beerSearch, setBeerSearch] = useState("");
 
   useEffect(() => {
     // DB.getBeers()
@@ -37,6 +39,22 @@ function BrowseBeers() {
     console.log("useEffect has been called");
   }, []);
 
+  const handleInputChange = (event) => {
+    // Destructure the name and value properties off of event.target
+    // Update the appropriate state
+    const { value } = event.target;
+    setBeerSearch(value);
+  };
+
+  const handleFormSubmit = (event) => {
+    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
+    event.preventDefault();
+    console.log(beerSearch);
+    API.getBeersLocal(beerSearch)
+      .then((res) => setBeers(res.data))
+      .catch((err) => console.log(err));
+  };
+
   // DB.getBeers(beerSearch)
   //   .then(res => setBeers(res.data))
   //   .catch(err => console.log(err));
@@ -47,28 +65,52 @@ function BrowseBeers() {
     //   <Row>
     //     <Col>
     //       <div className="beerContainer">
-    <CardGroup>
-      {beers.data.slice(0, 6).map((beer, index) => {
-        return (
-          <Card className="beerCard" xs={12} sm={12} md={6} lg={2} xl={2}>
-            <Card.Img variant="top" src="" className="cardImage" />
-            <Card.Body>
-              <h3>
-                <i class="fas fa-plus-circle"></i>
-              </h3>
-              {/* <Card.Title>Name of Beer</Card.Title> */}
-              <Card.Title>{beer.name}</Card.Title>
-              <Card.Title style={{ fontSize: 13 }}>
-                {beer.style.name} | {beer.abv}% ABV
-              </Card.Title>
-              <Card.Text>Region/Type: {beer.style.category.name}</Card.Text>
-              <Card.Text>Description: {}</Card.Text>
-            </Card.Body>
-          </Card>
-        );
-      })}
-    </CardGroup>
-    // );
+    <Container className="browseBeer">
+      <h1>Browse Beer</h1>
+      <Row>
+        <Col>
+          <form>
+            <Input
+              name="BeerSearch"
+              value={beerSearch}
+              onChange={handleInputChange}
+              placeholder="Search For a Beer"
+            />
+            <Button
+              onClick={handleFormSubmit}
+              type="success"
+              className="input-lg"
+            >
+              Search
+            </Button>
+          </form>
+        </Col>
+      </Row>
+      <Row>
+        {beers.data.slice(0, 6).map((beer, index) => {
+          return (
+            <Col>
+              <Card className="beerCard" xs={12} sm={12} md={6} lg={2} xl={2}>
+                <Card.Img variant="top" src="" className="cardImage" />
+                <Card.Body>
+                  <h3>
+                    <i class="fas fa-plus-circle"></i>
+                  </h3>
+                  {/* <Card.Title>Name of Beer</Card.Title> */}
+                  <Card.Title>{beer.name}</Card.Title>
+                  <Card.Title style={{ fontSize: 13 }}>
+                    {beer.style.name} | {beer.abv}% ABV
+                  </Card.Title>
+                  <Card.Text>Region/Type: {beer.style.category.name}</Card.Text>
+                  <Card.Text>Description: {}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+      // );
+    </Container>
   );
 }
 
