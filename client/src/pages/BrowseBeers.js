@@ -47,35 +47,27 @@ function BrowseBeers() {
     //   <Row>
     //     <Col>
     //       <div className="beerContainer">
-    // <CardGroup xs={12} sm={12} md={6} lg={2} xl={2}>
-    <Container>
-      <Row>
-        <Col>
-          {beers.data.slice(0, 6).map((beer, index) => {
-            return (
-              <Card className="beerCard">
-                <Card.Img variant="top" src="" className="cardImage" />
-                <Card.Body>
-                  <h3>
-                    <i class="fas fa-plus-circle"></i>
-                  </h3>
-                  {/* <Card.Title>Name of Beer</Card.Title> */}
-                  <Card.Title>{beer.name}</Card.Title>
-                  <Card.Title style={{ fontSize: 13 }}>
-                    {beer.style.name} | {beer.abv}% ABV
-                  </Card.Title>
-                  <Card.Text mx>
-                    Region/Type: {beer.style.category.name}
-                  </Card.Text>
-                  <Card.Text>Description: {}</Card.Text>
-                </Card.Body>
-              </Card>
-            );
-          })}
-        </Col>
-      </Row>
-    </Container>
-    // </CardGroup>
+    <CardGroup>
+      {beers.data.slice(0, 6).map((beer, index) => {
+        return (
+          <Card className="beerCard" xs={12} sm={12} md={6} lg={2} xl={2}>
+            <Card.Img variant="top" src="" className="cardImage" />
+            <Card.Body>
+              <h3>
+                <i class="fas fa-plus-circle"></i>
+              </h3>
+              {/* <Card.Title>Name of Beer</Card.Title> */}
+              <Card.Title>{beer.name}</Card.Title>
+              <Card.Title style={{ fontSize: 13 }}>
+                {beer.style.name} | {beer.abv}% ABV
+              </Card.Title>
+              <Card.Text>Region/Type: {beer.style.category.name}</Card.Text>
+              <Card.Text>Description: {}</Card.Text>
+            </Card.Body>
+          </Card>
+        );
+      })}
+    </CardGroup>
     // );
   );
 }
