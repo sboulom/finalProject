@@ -11,8 +11,8 @@
 }
 
 .beerCard {
+  height: 100%;
   background-color: #fcaf14;
-  /* margin: 1%; */
 }
 
 /* Card image  */
