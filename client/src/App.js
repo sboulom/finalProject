@@ -7,13 +7,14 @@ import SignIn from "./pages/SignIn";
 import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import "./app.css";
-// import beerImage from "../public/assets/beerImage2.jpg";
+import Jumbotron from "./components/Jumbotron"
+
 
 function App() {
   return (
     <div className="wrapper">
-    {/* <div style = {{ backgroundImage: `url (${ beerImage })` }} className="wrapper"> */}
       <NavigationBar />
+      <Jumbotron />
       <Router>
         <Switch>
           <Route path="/register" component={Register} />

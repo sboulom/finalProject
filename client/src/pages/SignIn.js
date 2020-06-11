@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Card, InputGroup, FormControl, Button} from 'react-bootstrap'
+import { Container, Card, InputGroup, FormControl, Button } from 'react-bootstrap'
 import './SignIn.css'
 
 const SignIn = () => {

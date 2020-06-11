@@ -6,7 +6,8 @@
 
 }
 .userWrapper{
-    padding-top: 20vh;
+    /* padding-top: 20vh; */
+  
 }
 .card-title {
     border:thick;
@@ -15,8 +16,8 @@
 }
 .card{
     background-color: white;
-    box-shadow: 5px 10px 8px #888888;
-    background-color: #ffbf00;
+    /* box-shadow: 5px 10px 8px #888888; */
+    
     margin: 1%;
     cursor: pointer;
 }
@@ -26,13 +27,13 @@
 }
 
 h1 {
-    color: white;
+    color: black;
 }
 
 ul{
     color: black;
 }
-.statsDiv {
+/* .statsDiv {
     text-align: center;
-}
+} */
 
