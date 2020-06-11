@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col, CardGroup, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -89,9 +89,13 @@ function BrowseBeers() {
       <Row>
         {beers.data.slice(0, 12).map((beer, index) => {
           return (
-            <Col xs={12} sm={12} md={6} lg={2} xl={2} className="px-0">
+            <Col xs={12} sm={12} md={6} lg={2} xl={2} className="my-1 px-0">
               <Card className="beerCard">
-                <Card.Img variant="top" src="" className="cardImage" />
+                <Card.Img
+                  variant="top"
+                  src="./assets/pixelMug.jpg"
+                  className="cardImage mx-auto"
+                />
                 <Card.Body>
                   <h3>
                     <i class="fas fa-plus-circle"></i>
