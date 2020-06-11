@@ -91,16 +91,17 @@ function BrowseBeers() {
           return (
             <Col xs={12} sm={12} md={6} lg={2} xl={2} className="my-1 px-0">
               <Card className="beerCard">
+                <Card.Title className="ml-auto">
+                  <h4>
+                    <i class="fas fa-plus-circle"></i>
+                  </h4>
+                </Card.Title>
                 <Card.Img
                   variant="top"
                   src="./assets/pixelMug.jpg"
                   className="cardImage mx-auto"
                 />
                 <Card.Body>
-                  <h3>
-                    <i class="fas fa-plus-circle"></i>
-                  </h3>
-                  {/* <Card.Title>Name of Beer</Card.Title> */}
                   <Card.Title>{beer.name}</Card.Title>
                   <Card.Title style={{ fontSize: 13 }}>
                     {beer.style.name} | {beer.abv}% ABV
