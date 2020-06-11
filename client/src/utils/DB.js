@@ -17,7 +17,7 @@ import axios from "axios";
 // };
 
 export default {
-  getBeers: function(query) {
-    return axios.get("/api/beers", { params: { q: query } });
+  getBeersLocal: function() {
+    return axios.get("/api/beers", {params: {}});
   }
 };
