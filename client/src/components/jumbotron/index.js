@@ -1,7 +1,7 @@
 import React from "react";
 import { Jumbotron, Container, Carousel } from "react-bootstrap";
 import "./index.css";
-
+ let x;
 
 function Jumbo() {
   return (
