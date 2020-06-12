@@ -1,34 +1,45 @@
 import React from "react";
-import { Container, Form, Button } from 'react-bootstrap'
-// import './Register.css'
+import { Container, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
+import './Register.css'
 
 
 const Register = () => {
   return(
-  <Container>
-    <Form>
-      <Form.Group controlId="email">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-
-    </Form>
+    <Container className='registerWrapper'>
+    <div>
+        <Card.Body className='color'>
+          <Card.Title>Sign Up</Card.Title>
+          <InputGroup className='mb-3'>
+            <FormControl
+              placeholder='First Name'
+              aria-label='First Name'
+              aria-describedby='basic-addon1'
+            />
+          </InputGroup>
+          <InputGroup className='mb-3'>
+            <FormControl
+              placeholder='Last Name'
+              aria-label='Last Name'
+              aria-describedby='basic-addon1'
+            />
+          </InputGroup>
+          <InputGroup className='mb-3'>
+            <FormControl
+              placeholder='Email'
+              aria-label='Email'
+              aria-describedby='basic-addon1'
+            />
+          </InputGroup>
+          <InputGroup className='mb-3'>
+            <FormControl
+              placeholder='Password'
+              aria-label='Password'
+              aria-describedby='basic-addon1'
+            />
+          </InputGroup>
+          <Button variant="outline-secondary">Submit</Button>
+        </Card.Body>
+    </div>
   </Container>
   )
 };
