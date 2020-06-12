@@ -1,23 +1,38 @@
 .beerContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'Courier Prime', monospace;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Courier Prime", monospace;
 }
 
 .browseBeer {
-    padding-top: 20vh;
+  padding-top: 20vh;
 }
 
-.beerCard {
-    background-color: #fcaf14;
-    margin: 1%;
+/* Card Styling */
+.cardHeight {
+  height: 100%;
+}
+
+.cardColor {
+  background-color: beige;
+}
+
+.subText {
+  font-size: 13px;
 }
 
 /* Card image  */
-/* .cardImage {
-    width: 60;
-    height: 60; 
-    border-radius: 20px 60px;
-} */
+.cardImage {
+  width: 60px;
+  height: 60px;
+  border-style: double;
+  border-radius: 35px;
+  border-width: 5px;
+  border-color: white;
+}
+
+.searchBar {
+  align-items: center;
+}

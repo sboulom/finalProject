@@ -1,39 +1,40 @@
-.userBeer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
+.userBeer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+
 .userWrapper{
     /* padding-top: 20vh; */
-  
-}
-.card-title {
-    border:thick;
-    color: black;
 
 }
-.card{
-    background-color: white;
-    /* box-shadow: 5px 10px 8px #888888; */
-    
-    margin: 1%;
-    cursor: pointer;
+.card-title {
+  border: thick;
+  color: black;
 }
-.Container{
-    position: absolute;
-    z-index: 1;
+
+.card {
+  background-color: white;
+  /* box-shadow: 5px 10px 8px #888888; */
+  background-color: #ffbf00;
+  margin: 1%;
+  cursor: pointer;
+}
+.Container {
+  position: absolute;
+  z-index: 1;
 }
 
 h1 {
-    color: black;
+  color: white;
 }
 
-ul{
-    color: black;
+ul {
+  color: black;
 }
-/* .statsDiv {
-    text-align: center;
-} */
+
+.statsDiv {
+  text-align: center;
+}
 

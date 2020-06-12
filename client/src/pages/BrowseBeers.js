@@ -1,81 +1,53 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import SearchBar from "../components/SearchBar/searchBar";
 
 // import DB from "../utils/DB.js";
-
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
-  //const [beers, setBeers] = useState({ data: [] }); - API usage
+  // For API -> Card Usage:
+  // const [beers, setBeers] = useState({ data: [] });
   const [beers, setBeers] = useState([]);
   const [beerSearch, setBeerSearch] = useState("");
-  // const [Description, setDescription] = useState();
-  // const [StyleDescription, setStyleDescription] = useState();
-  // const [beerSearch, setBeerSearch] = useState("");
 
+  // For API -> Card Usage:
   // useEffect(() => {
-  //   // DB.getBeers()
-  //   //   .then((res) => {
-  //   //     console.log(res);
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     console.log(err);
-  //   //   });
   //   API.getBeers()
   //     .then((res) => {
   //       setBeers(res.data);
-  //       // console.log(res.data.data[0]);
-  //       // res.data.data.slice(0, 2).map((beer, index) => {
-  //       //   if (beer.description == null) {
-  //       //     return beer.style.description;
-  //       //   } else {
-  //       //     return beer.description;
-  //       //   }
-  //       // });
   //     })
   //     .catch((err) => {
   //       console.log(err);
   //     });
-
-  //   // API.getBeersLocal()
-  //   //   .then((res) => {
-  //   //     setBeers(res.data);
-  //   //     console.log("database test: ");
-  //   //     console.log(res.data);
-  //   //   })
-  //   //   .catch((err) => {
-  //   //     console.log(err);
-  //   //   });
-
   //   console.log("useEffect has been called");
   // }, []);
 
-  //search functionality
-  
-
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     // Destructure the name and value properties off of event.target
     // Update the appropriate state
     const { value } = event.target;
     setBeerSearch(value);
   };
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     console.log(beerSearch);
     API.getBeersLocal(beerSearch)
-      .then(res => setBeers(res.data))
-      .catch(err => console.log(err));
+      .then((res) => setBeers(res.data))
+      .catch((err) => console.log(err));
   };
 
   return (
     <Container className="browseBeer">
-      <h1>Browse Beer</h1>
+      <div>
+        <h1>Browse Beer</h1>
+      </div>
       <Row>
         <Col>
           <form>
@@ -90,41 +62,51 @@ function BrowseBeers() {
               type="success"
               className="input-lg"
             >
-                Search
+              Search
             </Button>
           </form>
-          <div className="beerContainer">
-          {!beers.length ? (
-              <h1 className="text-center">No Beers to Display</h1>
-            ) : (
-              <div>
-                {beers.map((beer, index) => {
-                  return (
-                    <Card className="beerCard">
-                      <Card.Img variant="top" src="" className="cardImage" />
-                      <Card.Body>
-                        <h3>
-                          <i class="fas fa-plus-circle"></i>
-                        </h3>
-                        {/* <Card.Title>Name of Beer</Card.Title> */}
-                        <Card.Title>{beer.name}</Card.Title>
-                        <Card.Title style={{ fontSize: 13 }}>
-                          {beer.beerStyle} | {beer.abv}% ABV
-                        </Card.Title>
-                        <Card.Text>
-                          <ul>
-                            <li>Region/Type: {beer.beerCategory}</li>
-                            <li>Excerpt of Description: {}</li>
-                          </ul>
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  );
-                })}
-              </div>
-            )}
-          </div>
         </Col>
+      </Row>
+      {!beers.length ? (
+        <h1 className="text-center">No Beers to Display</h1>
+      ) : (
+        <Row>
+          {beers.slice(0, 12).map((beer, index) => {
+            return (
+              <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
+                <Card className="cardHeight">
+                  <Card className="cardHeight cardColor">
+                    <Card.Title className="ml-auto">
+                      <h4>
+                        <i className="fas fa-plus-circle"></i>
+                      </h4>
+                    </Card.Title>
+                    <Card.Img
+                      variant="top"
+                      src="./assets/pixelMug.jpg"
+                      className="cardImage mx-auto"
+                    />
+                    <Card.Body>
+                      <Card.Title className="text-center">
+                        {beer.name}
+                      </Card.Title>
+                      <Card.Title className="subText">
+                        {beer.beerStyle} | {beer.abv}% ABV
+                      </Card.Title>
+                      <Card.Text className="subText">
+                        {beer.beerCategory}
+                      </Card.Text>
+                      <Card.Text>Description: {}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Card>
+              </Col>
+            );
+          })}
+        </Row>
+      )}
+      <Row>
+        <SearchBar></SearchBar>
       </Row>
     </Container>
   );
