@@ -8,6 +8,7 @@ import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import AddABeer from "./pages/AddABeer";
 import "./app.css";
+
 import Jumbotron from "./components/Jumbotron"
 
 

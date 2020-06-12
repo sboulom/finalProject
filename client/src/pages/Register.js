@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Container, InputGroup, FormControl, Button, Card } from 'react-bootstrap'
 import './Register.css'
+
 
 
 const Register = () => {
@@ -40,6 +42,7 @@ const Register = () => {
           <Button variant="outline-secondary">Submit</Button>
         </Card.Body>
     </div>
+
   </Container>
   )
 };
