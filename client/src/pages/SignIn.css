@@ -1,15 +1,17 @@
 .signInWrapper{
-    padding-top: 20vh;
+    padding-top: 15vh;
     width: 60vh;
     text-align: center;
-
+    padding-bottom: 20vh; 
+    border-radius: 50px;
 }
 
-.fas {
-    text-decoration: none;
+.cardArea{
+    background-color: #F5F5DC;
+    border-radius: 25px;
+    
 }
 
-
-Button{
-    text-decoration: none;
+.whiteSpace{
+    border-radius: 25px;
 }

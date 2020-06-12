@@ -1,0 +1,15 @@
+.registerCard {
+    /* background-color: aqua; */
+    border-radius: 25px;
+}
+
+.registerWrapper {
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+    text-align: center;
+}
+
+.color{
+    background-color: #F5F5DC;
+    border-radius: 25px;
+}

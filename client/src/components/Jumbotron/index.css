@@ -1,20 +1,15 @@
-.jumbo {
-    
-    /* background: url("assets/i
-    background: url("../../assets/beerImage.jpg"mages/beerImage.jpg"); */
-    /* height: 800px;
-    /* object-fit: cover; */
-    /* max-height: 100%;
-    max-width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vh;
-    position: absolute;
-    z-index: 1; */
-    /* background-size: cover; */
-}
 /* .display {
-    height: 100px;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background: url('/assets/beerImage2.jpg');
+  height: 40vh;
+  opacity: .9;
+} */
+.cImg {
+  height: 35vh;
+  width: 200vh;
+  background-size: cover !important;
 }
- */
+h1, h2{
+  text-align: center;
+}

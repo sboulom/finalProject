@@ -12,6 +12,7 @@ export const NavigationBar = () => (
         <Nav.Link href="/"><i class="fas fa-home"> Home</i></Nav.Link>
         <Nav.Link href='/'><i class="fas fa-house-user"> Profile</i></Nav.Link>
         <Nav.Link href='/Browse'><i class="fas fa-beer"> Browse Beers</i></Nav.Link>
+        <Nav.Link href='/addabeer'><i class="fas fa-plus-square"> Add A Beer</i></Nav.Link>
         <Nav.Link href='/signin'>Sign In</Nav.Link>
         <Nav.Link href='/register'>Register</Nav.Link>
       </Navbar.Collapse>

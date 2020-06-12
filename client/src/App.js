@@ -8,14 +8,15 @@ import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import AddABeer from "./pages/AddABeer";
 import "./app.css";
-// import SearchBar from "./components/SearchBar/searchBar";
-// import beerImage from "../public/assets/beerImage2.jpg";
+
+import Jumbotron from "./components/Jumbotron"
+
 
 function App() {
   return (
     <div className="wrapper">
-    {/* <div style = {{ backgroundImage: `url (${ beerImage })` }} className="wrapper"> */}
       <NavigationBar />
+      <Jumbotron />
       <Router>
         <Switch>
           <Route path="/register" component={Register} />
