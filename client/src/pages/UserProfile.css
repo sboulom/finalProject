@@ -1,18 +1,16 @@
-.userBeer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
+.userBeer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .userWrapper{
     padding-top: 15vh;
   
 }
 .card-title {
-    border:thick;
-    color: black;
-
+  border: thick;
+  color: black;
 }
 .card{
     background-color: white;
@@ -21,17 +19,17 @@
     margin: 1%;
     cursor: pointer;
 }
-.Container{
-    position: absolute;
-    z-index: 1;
+.Container {
+  position: absolute;
+  z-index: 1;
 }
 
 h1 {
     color: black;
 }
 
-ul{
-    color: black;
+ul {
+  color: black;
 }
 /* .statsDiv {
     text-align: center;
