@@ -4,13 +4,16 @@
   align-items: center;
   justify-content: space-between;
 }
-.userWrapper {
-  padding-top: 20vh;
+
+.userWrapper{
+    /* padding-top: 20vh; */
+
 }
 .card-title {
   border: thick;
   color: black;
 }
+
 .card {
   background-color: white;
   /* box-shadow: 5px 10px 8px #888888; */
@@ -30,6 +33,8 @@ h1 {
 ul {
   color: black;
 }
+
 .statsDiv {
   text-align: center;
 }
+
