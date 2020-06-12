@@ -1,38 +1,106 @@
-import React from 'react'
-import {Container, Card, InputGroup, FormControl, Button} from 'react-bootstrap'
-// 
+import React from "react";
+import "../pages/AddABeer.css";
+
 const AddABeer = () => {
   return (
-    // <Container className='signInWrapper'>
-    //   <div>
-    //     <Card>
-    //       <Card.Body>
-    //         <Card.Title>Sign In</Card.Title>
-    //         <InputGroup className='mb-3'>
-    //           <FormControl
-    //             placeholder='Email'
-    //             aria-label='Email'
-    //             aria-describedby='basic-addon1'
-    //           />
-    //         </InputGroup>
-    //         <InputGroup className='mb-3'>
-    //           <FormControl
-    //             placeholder='Password'
-    //             aria-label='Password'
-    //             aria-describedby='basic-addon1'
-    //           />
-    //         </InputGroup>
-    //         <Button>
-    //           <i class='fas fa-door-open'></i>
-    //         </Button>
-    //       </Card.Body>
-    //     </Card>
-    //   </div>
-    // </Container>
     <div>
-      Hello From Add A beer
+      <Container>
+      <Row>
+        <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
+          <Card className="cardHeight">
+            <Card className="cardHeight cardColor">
+              <Card.Title className="ml-auto">
+                <h4>
+                  <i className="fas fa-plus-circle"></i>
+                </h4>
+              </Card.Title>
+              <Card.Img
+                variant="top"
+                src="./assets/pixelMug.jpg"
+                className="cardImage mx-auto"
+              />
+              <Card.Body>
+                <Card.Title className="text-center">Name of Beer</Card.Title>
+                <Card.Title className="subText">
+                  Style of Beer | A number goes here lmao% ABV
+                </Card.Title>
+                <Card.Text className="subText">Category of Beer</Card.Text>
+                <Card.Text>Description: {}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
     </div>
-  )
-}
+    // <div className="addBeerForm">
+    //   <div className="beerName">
+    //     <input
+    //       type="text"
+    //       class="form-control"
+    //       placeholder="Beer Name"
+    //       aria-label="Recipient's username"
+    //       aria-describedby="button-addon2"
+    //     />
+    //     <div class="input-group-append">
 
-export default AddABeer
+    //     </div>
+    //   </div>
+
+    //   <div className="beerName">
+    //     <input
+    //       type="text"
+    //       class="form-control"
+    //       placeholder="Style of Beer"
+    //       aria-label="Recipient's username"
+    //       aria-describedby="button-addon2"
+    //     />
+    //     <div class="input-group-append">
+
+    //     </div>
+    //   </div>
+    //   <div className="beerName">
+    //     <input
+    //       type="text"
+    //       class="form-control"
+    //       placeholder="ABV"
+    //       aria-label="Recipient's username"
+    //       aria-describedby="button-addon2"
+    //     />
+    //     <div class="input-group-append">
+
+    //     </div>
+    //   </div>
+    //   <div className="beerName">
+    //     <input
+    //       type="text"
+    //       class="form-control"
+    //       placeholder="Beer Category"
+    //       aria-label="Recipient's username"
+    //       aria-describedby="button-addon2"
+    //     />
+    //     <div class="input-group-append">
+
+    //     </div>
+    //   </div>
+    //   <div class="form-group">
+    //     <label for="exampleFormControlTextarea1"></label>
+    //     <textarea
+    //       class="form-control"
+    //       id="exampleFormControlTextarea1"
+    //       placeholder="Short Description"
+    //       rows="3"
+    //     ></textarea>
+    //           <button
+    //         className="descriptionButton"
+    //         type="button"
+    //         id="button-addon2"
+    //       >
+    //         Beer Me
+    //       </button>
+    //   </div>
+    // </div>
+  );
+};
+
+export default AddABeer;

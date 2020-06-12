@@ -1,0 +1,27 @@
+.addBeerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5;
+    margin: auto;
+    padding-top: 2%;
+}
+
+.beerName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 2%;
+}
+
+.descriptionButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
