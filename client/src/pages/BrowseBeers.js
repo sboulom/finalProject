@@ -103,7 +103,7 @@ function BrowseBeers() {
                     className="cardImage mx-auto"
                   />
                   <Card.Body>
-                    <Card.Title>{beer.name}</Card.Title>
+                    <Card.Title className="text-center">{beer.name}</Card.Title>
                     <Card.Title className="subText">
                       {beer.style.name} | {beer.abv}% ABV
                     </Card.Title>
