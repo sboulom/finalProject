@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import SearchBar from "../components/SearchBar/searchBar";
+
 // import DB from "../utils/DB.js";
 import "./BrowseBeers.css";
 
@@ -43,7 +45,9 @@ function BrowseBeers() {
 
   return (
     <Container className="browseBeer">
-      <h1>Browse Beer</h1>
+      <div>
+        <h1>Browse Beer</h1>
+      </div>
       <Row>
         <Col>
           <form>
@@ -101,6 +105,9 @@ function BrowseBeers() {
           })}
         </Row>
       )}
+      <Row>
+        <SearchBar></SearchBar>
+      </Row>
     </Container>
   );
 }
