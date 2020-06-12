@@ -89,7 +89,7 @@ function BrowseBeers() {
       <Row>
         {beers.data.slice(0, 12).map((beer, index) => {
           return (
-            <Col xs={12} sm={12} md={6} lg={2} xl={2} className="my-1 px-0">
+            <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
               <Card className="cardHeight">
                 <Card className="cardHeight cardColor">
                   <Card.Title className="ml-auto">
