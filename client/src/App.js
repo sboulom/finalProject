@@ -9,8 +9,7 @@ import BrowseBeers from "./pages/BrowseBeers";
 import AddABeer from "./pages/AddABeer";
 import "./app.css";
 
-import Jumbotron from "./components/Jumbotron"
-
+import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
@@ -24,8 +23,8 @@ function App() {
           <Route path="/browse" component={BrowseBeers} />
           <Route path="/addabeer" component={AddABeer} />
           {/* Home route temporarily will route to UserProfile until Auth is set up */}
-          <Route exact path="/" component={UserProfile}> 
-          {/* <div class="lds-circle"><div></div></div> */}
+          <Route exact path="/" component={UserProfile}>
+            {/* <div class="lds-circle"><div></div></div> */}
           </Route>
         </Switch>
         {/* <SearchBar /> */}
