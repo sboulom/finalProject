@@ -20,7 +20,7 @@ function UserProfile() {
                     <Card.Title>Name of Beer</Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>Beer Stlye</li>
+                        <li>Beer Style</li>
                         <li>ABV</li>
                         <li>Excerpt of Description</li>
                         <li>Category</li>

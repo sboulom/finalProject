@@ -6,8 +6,8 @@ const SignIn = () => {
   return (
     <Container className='signInWrapper'>
       <div>
-        <Card>
-          <Card.Body>
+        <Card className='whiteSpace'>
+          <Card.Body className='cardArea'>
             <Card.Title>Sign In</Card.Title>
             <InputGroup className='mb-3'>
               <FormControl
