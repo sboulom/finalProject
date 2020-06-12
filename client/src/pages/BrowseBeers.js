@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import SearchBar from "../components/SearchBar/searchBar";
 
 // import DB from "../utils/DB.js";
 
@@ -77,9 +78,7 @@ function BrowseBeers() {
     <Container className="browseBeer">
       <div>
       <h1>Browse Beer</h1>
-      <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search..." name="search" className="searchBar"/>
-      </form>
+     
       </div>
       <Row>
         <Col>
@@ -130,6 +129,11 @@ function BrowseBeers() {
             )}
           </div>
         </Col>
+      </Row>
+      <Row>
+                <SearchBar>
+
+                </SearchBar>
       </Row>
     </Container>
   );
