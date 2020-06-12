@@ -16,8 +16,10 @@
 }
 
 /* Card image  */
-/* .cardImage {
-    width: 60;
-    height: 60; 
-    border-radius: 20px 60px;
-} */
+.cardImage {
+    margin: auto;    
+}
+
+.searchBar {
+    align-items: center;
+}
