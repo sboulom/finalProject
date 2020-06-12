@@ -104,11 +104,11 @@ function BrowseBeers() {
                   />
                   <Card.Body>
                     <Card.Title>{beer.name}</Card.Title>
-                    <Card.Title style={{ fontSize: 13 }}>
+                    <Card.Title className="subText">
                       {beer.style.name} | {beer.abv}% ABV
                     </Card.Title>
-                    <Card.Text>
-                      Region/Type: {beer.style.category.name}
+                    <Card.Text className="subText">
+                      {beer.style.category.name}
                     </Card.Text>
                     <Card.Text>Description: {}</Card.Text>
                   </Card.Body>

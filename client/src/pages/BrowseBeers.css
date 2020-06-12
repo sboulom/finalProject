@@ -10,12 +10,17 @@
   padding-top: 20vh;
 }
 
+/* Card Styling */
 .cardHeight {
   height: 100%;
 }
 
 .cardColor {
   background-color: beige;
+}
+
+.subText {
+  font-size: 13px;
 }
 
 /* Card image  */
