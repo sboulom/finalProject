@@ -65,4 +65,19 @@ router.get('/beers', (req, res) => {
     .catch((err) => res.status(422).end())
 })
 
-module.exports = router
+router.get("/userdata", (req, res) => {
+  // Use a regular expression to search titles for req.query.q
+  // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
+  db.UserData.find({
+    username: req.query.q
+  })
+    .then(userdata => res.json(userdata))
+    .catch(err => res.status(422).end());
+});
+
+router.get("/user", (req, res) => {
+  
+})
+
+module.exports = router;
+
