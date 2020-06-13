@@ -75,9 +75,8 @@ router.get("/userdata", (req, res) => {
     .catch(err => res.status(422).end());
 });
 
-router.get("/user", (req, res) => {
-  
-})
+// router.get("/user", (req, res) => {
+// })
 
 module.exports = router;
 
