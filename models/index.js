@@ -1,3 +1,4 @@
 module.exports = {
-  Beer: require("./beer")
+  Beer: require("./beer"),
+  UserData: require("./user_data")
 };

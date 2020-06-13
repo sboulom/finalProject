@@ -5,10 +5,24 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const beersRouter = require("./routes/beers");
 const apiRoutes = require("./routes/apiRoutes");
+const session = require('express-session');
+const passport = require('passport');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+// Express Session
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
