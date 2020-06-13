@@ -17,7 +17,11 @@
     "styled-components": "^5.1.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.8.11",
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "express-session": "~1.14.1",
+    "passport": "~0.3.2",
+    "passport-local": "~1.0.0",
+    "bcryptjs": "*"
   },
   "scripts": {
     "start": "react-scripts start",
