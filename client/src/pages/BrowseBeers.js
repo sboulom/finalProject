@@ -4,9 +4,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
-import SearchBar from "../components/SearchBar/searchBar";
-
-// import DB from "../utils/DB.js";
+// import SearchBar from "../components/SearchBar/searchBar";
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
@@ -103,14 +101,9 @@ function BrowseBeers() {
           );
         })}
       </Row>
-      {/* )} */}
-      <Row>
-        <SearchBar></SearchBar>
-      </Row>
     </Container>
   );
 }
-
 export default BrowseBeers;
 
 // document.getElementById("addBeer").onclick = function(){console.log('Beer Added')}
