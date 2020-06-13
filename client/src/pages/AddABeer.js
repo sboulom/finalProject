@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import "../pages/AddABeer.css";
 
+
 const AddABeer = () => {
+
+  const [beers, setBeers] = useState({ data: [] });
+
   return (
-    <div>
-      <Container>
+<div>
+<Container>
       <Row>
         <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
           <Card className="cardHeight">
@@ -32,74 +37,75 @@ const AddABeer = () => {
         </Col>
       </Row>
     </Container>
+
+    <div className="addBeerForm">
+      <div className="beerName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Beer Name"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <div class="input-group-append">
+
+        </div>
+      </div>
+
+      <div className="beerName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Style of Beer"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <div class="input-group-append">
+
+        </div>
+      </div>
+      <div className="beerName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="ABV"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <div class="input-group-append">
+
+        </div>
+      </div>
+      <div className="beerName">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Beer Category"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <div class="input-group-append">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1"></label>
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          placeholder="Short Description"
+          rows="3"
+        ></textarea>
+              <button
+            className="descriptionButton"
+            type="button"
+            id="button-addon2"
+          >
+            Beer Me
+          </button>
+      </div>
     </div>
-    // <div className="addBeerForm">
-    //   <div className="beerName">
-    //     <input
-    //       type="text"
-    //       class="form-control"
-    //       placeholder="Beer Name"
-    //       aria-label="Recipient's username"
-    //       aria-describedby="button-addon2"
-    //     />
-    //     <div class="input-group-append">
-
-    //     </div>
-    //   </div>
-
-    //   <div className="beerName">
-    //     <input
-    //       type="text"
-    //       class="form-control"
-    //       placeholder="Style of Beer"
-    //       aria-label="Recipient's username"
-    //       aria-describedby="button-addon2"
-    //     />
-    //     <div class="input-group-append">
-
-    //     </div>
-    //   </div>
-    //   <div className="beerName">
-    //     <input
-    //       type="text"
-    //       class="form-control"
-    //       placeholder="ABV"
-    //       aria-label="Recipient's username"
-    //       aria-describedby="button-addon2"
-    //     />
-    //     <div class="input-group-append">
-
-    //     </div>
-    //   </div>
-    //   <div className="beerName">
-    //     <input
-    //       type="text"
-    //       class="form-control"
-    //       placeholder="Beer Category"
-    //       aria-label="Recipient's username"
-    //       aria-describedby="button-addon2"
-    //     />
-    //     <div class="input-group-append">
-
-    //     </div>
-    //   </div>
-    //   <div class="form-group">
-    //     <label for="exampleFormControlTextarea1"></label>
-    //     <textarea
-    //       class="form-control"
-    //       id="exampleFormControlTextarea1"
-    //       placeholder="Short Description"
-    //       rows="3"
-    //     ></textarea>
-    //           <button
-    //         className="descriptionButton"
-    //         type="button"
-    //         id="button-addon2"
-    //       >
-    //         Beer Me
-    //       </button>
-    //   </div>
-    // </div>
+    </div>
   );
 };
 
