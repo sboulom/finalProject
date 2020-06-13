@@ -25,15 +25,16 @@ function BrowseBeers() {
     console.log("useEffect has been called");
   }, []);
 
+  // Destructure the name and value properties off of event.target
+  // Update the appropriate state
   const handleInputChange = (event) => {
-    // Destructure the name and value properties off of event.target
-    // Update the appropriate state
     const { value } = event.target;
     setBeerSearch(value);
   };
 
+  // When the form is submitted, prevent its default behavior
+  //  Get BeersLocal update the BeersLocal state
   const handleFormSubmit = (event) => {
-    // When the form is submitted, prevent its default behavior, get recipes update the recipes state
     event.preventDefault();
     console.log(beerSearch);
     API.getBeersLocal(beerSearch)
