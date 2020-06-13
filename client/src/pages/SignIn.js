@@ -5,10 +5,8 @@ import API from "../utils/API"
 
 const SignIn = () => {
   const [ state, setState ] = useState({ 
-    username: "",
-    password: "",
     email: "",
-    name: ""
+    password: "",
   })
     const  handleChange = event => {
     const {name, value} = event.target
@@ -66,4 +64,4 @@ const SignIn = () => {
   )
 }
 
-export default SignIn
+export default SignIn;
