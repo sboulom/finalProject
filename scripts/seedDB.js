@@ -7,57 +7,79 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reactbeers"
 );
 
-const beerSeed = [
-  {
-    picture: "",
-    name: "nameTest",
-    beerStyle: "beerStyleTest",
-    abv: 30,
-    shortDesc: "shortDescTest",
-    beerCategory: "categoryTest"
-  }
-];
+// const beerSeed = [
+//   {
+//     picture: "",
+//     name: "nameTest",
+//     beerStyle: "beerStyleTest",
+//     abv: 30,
+//     shortDesc: "shortDescTest",
+//     beerCategory: "categoryTest"
+//   }
+// ];
 
-//seeding beers
-db.Beer.remove({}) //clears the database of all data before seeding
-  .then(() => db.Beer.collection.insertMany(beerSeed))
-  .then(data => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+// //seeding beers
+// db.Beer.remove({}) //clears the database of all data before seeding
+//   .then(() => db.Beer.collection.insertMany(beerSeed))
+//   .then(data => {
+//     console.log(data.result.n + " records inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
 const userDataSeed = [
   {
-    username:"doofenschmirtz",
-    password: "perryplatypus",
+    username:"Alice",
+    password: "wonderland",
     beerCollection: [
       {
         picture: "",
-        name: "Phineas A",
-        beerStyle: "beerStyleTest",
-        abv: 30,
-        shortDesc: "shortDescTest",
-        beerCategory: "categoryTest"
+        name: "Mad Hatter's Mix",
+        beerStyle: "Unusual",
+        abv: 40,
+        shortDesc: "A very merry un-birthday!",
+        beerCategory: "Fizzy"
       },
       {
         picture: "",
-        name: "Ferb B",
-        beerStyle: "beerStyleTest",
+        name: "Chesire Cat's Concoction",
+        beerStyle: "Mysterious",
         abv: 30,
-        shortDesc: "shortDescTest",
-        beerCategory: "categoryTest"
+        shortDesc: "Riddles and riddles!",
+        beerCategory: "Foamy"
+      }
+    ]
+  },
+  {
+    username:"Bob",
+    password: "builder",
+    beerCollection: [
+      {
+        picture: "",
+        name: "Tom Nook's Tequila",
+        beerStyle: "Tanuki",
+        abv: 60,
+        shortDesc: "Very good, very good!",
+        beerCategory: "Real Estate"
       },
+      {
+        picture: "",
+        name: "Redd's Razzle Dazzle",
+        beerStyle: "Kitsune",
+        abv: 45,
+        shortDesc: "Thanks, cuz!",
+        beerCategory: "Forgery"
+      }
     ]
   }
 ];
 
 //seeding user data
 db.UserData.remove({}) //clear database
-  .then(() => db.UserData.collection.insertMany(beerSeed))
+  .then(() => db.UserData.collection.insertMany(userDataSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

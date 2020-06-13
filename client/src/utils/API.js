@@ -10,6 +10,10 @@ export default {
 
   getBeersLocal: function(query) {
     return axios.get("/api/beers", { params: { q: query } });
+  },
+
+  getCurrentUserData: function(query) {
+    return axios.get("/api/userdata", { params: { q: query } });
   }
 };
 
