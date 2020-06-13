@@ -68,7 +68,9 @@ router.get('/beers', (req, res) => {
 router.get("/userdata", (req, res) => {
   // Use a regular expression to search titles for req.query.q
   // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
-  db.UserData.find({
+  // console.log(res)
+  
+  db.User.find({
     username: req.query.q
   })
     .then(userdata => res.json(userdata))
