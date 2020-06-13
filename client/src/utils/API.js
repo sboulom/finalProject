@@ -11,6 +11,11 @@ export default {
   getBeersLocal: function(query) {
     return axios.get("/api/beers", { params: { q: query } });
   },
+
+  getCurrentUserData: function(query) {
+    return axios.get("/api/userdata", { params: { q: query } });
+  },
+
   signup: function(userData){
     return axios.post("/api/register", userData)
     
