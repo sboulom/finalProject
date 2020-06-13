@@ -50,19 +50,25 @@ function BrowseBeers() {
       <Row>
         <Col>
           <form>
-            <Input
-              name="BeerSearch"
-              value={beerSearch}
-              onChange={handleInputChange}
-              placeholder="Search For a Beer"
-            />
-            <Button
-              onClick={handleFormSubmit}
-              type="success"
-              className="input-lg"
-            >
-              Search
-            </Button>
+            <Row>
+              <Col xs={12} sm={12} md={10} lg={10} xl={10}>
+                <Input
+                  name="BeerSearch"
+                  value={beerSearch}
+                  onChange={handleInputChange}
+                  placeholder="Search For a Beer"
+                />
+              </Col>
+              <Col xs={12} sm={12} md={2} lg={2} xl={2}>
+                <Button
+                  type="success"
+                  onClick={handleFormSubmit}
+                  className="searchWidth my-1"
+                >
+                  Search
+                </Button>
+              </Col>
+            </Row>
           </form>
         </Col>
       </Row>
@@ -70,7 +76,7 @@ function BrowseBeers() {
         <h1 className="text-center">No Beers to Display</h1>
       ) : ( */}
       <Row>
-        {beers.data.slice(0, 12).map((beer, index) => {
+        {beers.data.slice(0, 6).map((beer, index) => {
           return (
             <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
               <Card className="cardHeight">
