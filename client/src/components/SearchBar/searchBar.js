@@ -27,7 +27,7 @@ export default class searchBar extends Component {
     console.log(event.target.value);
     const filter = event.target.value;
     const filteredList = this.state.beers.filter((item) => {
-        return item.name == filter;
+        return item.name === filter;
 
     });
     console.log(filteredList)
