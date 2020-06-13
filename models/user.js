@@ -16,9 +16,43 @@ var UserSchema = mongoose.Schema({
   name: {
     type: String,
   },
+  beerCollection: [
+    {
+      picture: {
+      //name of a picture that we could then grab from local files? Or possibly a url?
+      type: String,
+    },
+    name: {
+      //name of the beer
+      type: String,
+      required: true,
+    },
+    beerStyle: {
+      //Beer Style (i.e., Pilsner, IPA, Heff, etc.)
+      type: String,
+      default: "",
+    },
+    abv: {
+      //Alcohol by Volume (abv)
+      type: Number,
+    },
+    beerCategory: {
+      //"North American Beers", "German Beers", etc. Designated by API's categories
+      type: String,
+      default: "",
+    },
+    shortDesc: {
+      //Excerpt of Description (full description available on API)
+      type: String,
+      default: "",
+    }
+  }
+]
 })
 
-var User = (module.exports = mongoose.model('User', UserSchema))
+
+
+const User = (module.exports = mongoose.model('User', UserSchema))
 
 module.exports.createUser = function (newUser, callback) {
   bcrypt.genSalt(10, function (err, salt) {
@@ -73,3 +107,4 @@ passport.serializeUser(function(user, done) {
       done(err, user);
     });
   });
+

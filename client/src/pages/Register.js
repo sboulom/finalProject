@@ -30,7 +30,7 @@ const Register = () => {
       name: state.name
     }
     API.signup(userData).then(results=>{
-      console.log(results)
+      // console.log(results)
     })
   }
   
@@ -43,7 +43,7 @@ const Register = () => {
             <FormControl
               placeholder='Name'
               aria-label='Name'
-              aria-desribedby='basic-addon1'
+              aria-describedby='basic-addon1'
               name = "name"
               value = { state.name }
               onChange = { handleChange }
