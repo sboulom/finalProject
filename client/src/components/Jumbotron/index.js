@@ -7,7 +7,6 @@ function Jumbo() {
     <div>
       <Jumbotron fluid className="display">
         <Container className="jumbo">
-        <img className='cImg' src='/assets/beerImage2.jpg'alt='Three Beers'/>
       </Container>
       </Jumbotron>
     </div>

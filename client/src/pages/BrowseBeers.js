@@ -4,6 +4,8 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import BrowseBeerCard from "../components/BrowseBeerCard";
+
 import "./BrowseBeers.css";
 
 function BrowseBeers() {
@@ -77,34 +79,7 @@ function BrowseBeers() {
       ) : ( */}
       <Row>
         {beers.data.slice(0, 6).map((beer, index) => {
-          return (
-            <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
-              <Card className="cardHeight">
-                <Card className="cardHeight cardColor">
-                  <Card.Title className="ml-auto">
-                    <h4>
-                      <i className="fas fa-plus-circle"></i>
-                    </h4>
-                  </Card.Title>
-                  <Card.Img
-                    variant="top"
-                    src="./assets/pixelMug.jpg"
-                    className="cardImage mx-auto"
-                  />
-                  <Card.Body>
-                    <Card.Title className="text-center">{beer.name}</Card.Title>
-                    <Card.Title className="subText">
-                      {beer.style.name} | {beer.abv}% ABV
-                    </Card.Title>
-                    <Card.Text className="subText">
-                      {beer.style.category.name}
-                    </Card.Text>
-                    <Card.Text>Description: {}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Card>
-            </Col>
-          );
+          return BrowseBeerCard(beer);
         })}
       </Row>
     </Container>
