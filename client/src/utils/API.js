@@ -29,9 +29,13 @@ export default {
     return axios.get("/api/logout")
   },
 
-  getUser: function(){
-    return axios.get("/api/user")
+  addBrowsedBeer: function(converted_beer){
+    return axios.put('/add_browsed_beer/:user_id', converted_beer)
   }
+
+  // getUser: function(){
+  //   return axios.get("/api/user")
+  // }
 
 };
 
