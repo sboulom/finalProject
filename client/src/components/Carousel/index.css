@@ -5,8 +5,12 @@
   height: 40vh;
   opacity: .9;
 } */
-.display {
-  /* height: 35vh;
-  width: 200vh; */
-  background-size: cover !important;
-}
+.cImg {
+    height: 35vh;
+    width: 200vh;
+    background-size: cover !important;
+  }
+  h1, h2{
+    text-align: center;
+  }
+  

@@ -10,6 +10,11 @@
   padding-top: 20vh;
 }
 
+/* Search Bar Styling */
+.searchWidth {
+  width: 100%;
+}
+
 /* Card Styling */
 .cardHeight {
   height: 100%;
@@ -31,8 +36,4 @@
   border-radius: 35px;
   border-width: 5px;
   border-color: white;
-}
-
-.searchBar {
-  align-items: center;
 }
