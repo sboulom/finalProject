@@ -78,8 +78,8 @@ const AddABeer = () => {
                   <div >
                   <Container  >
                     <Row >
-                      <Col >
-                      <Button variant="success" className="button">Add Beer</Button>{" "}
+                      <Col className="button">
+                      <Button variant="success" >Add Beer</Button>{" "}
 
                       </Col>
                     </Row>
