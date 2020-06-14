@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import API from "../utils/API.js";
+import BeerCard from "../components/BeerCard";
 // import Input from "../components/Input";
 // import Button from "../components/Button";
 // import SearchBar from "../components/SearchBar/searchBar";
@@ -19,7 +20,7 @@ function UserProfile() {
     API.getCurrentUserData(currentUser)
       .then((res) => {
         setBeers(res.data[0].beerCollection);
-        // console.log("this is res: " + JSON.stringify(res.data[0]));
+        console.log("this is res: " + JSON.stringify(res.data[0]));
       })
       .catch((err) => {
         console.log(err);
@@ -46,7 +47,7 @@ function UserProfile() {
   return (
     <Container className="browseBeer">
       <div>
-        <h1>Browse Beer</h1>
+        <h1>Beer Collection</h1>
       </div>
       {/* <Row>
         <Col>
@@ -72,34 +73,7 @@ function UserProfile() {
       ) : (
       <Row>
         {beers.slice(0, 12).map((beer, index) => {
-          return (
-            <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
-              <Card className="cardHeight">
-                <Card className="cardHeight cardColor">
-                  <Card.Title className="ml-auto">
-                    <h4>
-                      <i className="fas fa-plus-circle"></i>
-                    </h4>
-                  </Card.Title>
-                  <Card.Img
-                    variant="top"
-                    src="./assets/pixelMug.jpg"
-                    className="cardImage mx-auto"
-                  />
-                  <Card.Body>
-                    <Card.Title className="text-center">{beer.name}</Card.Title>
-                    <Card.Title className="subText">
-                      {beer.beerStyle} | {beer.abv}% ABV
-                    </Card.Title>
-                    <Card.Text className="subText">
-                      {beer.beerCategory}
-                    </Card.Text>
-                    <Card.Text>Description: {beer.shortDesc}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Card>
-            </Col>
-          );
+          return BeerCard(beer);
         })}
       </Row>
       )}
