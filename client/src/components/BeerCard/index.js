@@ -18,9 +18,9 @@ function BeerCard(beer){
                 {beer.beerStyle} | {beer.abv}% ABV
               </Card.Title>
               <Card.Text className="subText">
-                {beer.shortDesc}
+                {beer.beerCategory}
               </Card.Text>
-              <Card.Text>Description: {}</Card.Text>
+              <Card.Text>Description: {beer.shortDesc}</Card.Text>
             </Card.Body>
           </Card>
         </Card>
