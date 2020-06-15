@@ -76,7 +76,7 @@ const AddABeer = () => {
                     <Form.Control as="textarea" rows="3" />
                   </Form.Group>
                   <div >
-                  <Container >
+                  <Container  >
                     <Row >
                       <Col className="button">
                       <Button variant="success" >Add Beer</Button>{" "}
