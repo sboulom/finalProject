@@ -68,7 +68,7 @@ function BrowseBeers() {
                 <Button
                   type="success"
                   onClick={handleFormSubmit}
-                  className="searchWidth my-1"
+                  className="searchWidth my-auto"
                 >
                   Search
                 </Button>
