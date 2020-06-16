@@ -24,8 +24,17 @@ function BrowseBeerCard(beer){
     //console.log(JSON.stringify(converted_beer));
 
     //update the current user with the new beer
-    axios.put('/add_browsed_beer/' + current_user, converted_beer)
-      .catch((err) => console.log(err));
+
+    API.getCurrentUserData(current_user)
+    .then((res) => {
+        //console.log(res.data[0].beerCollection);
+        console.log("test A");
+        var updated_user_data = res.data[0];
+        updated_user_data.beerCollection.push(converted_beer);
+        API.addBrowsedBeer(updated_user_data)
+        .catch((err) => console.log(err))
+      }
+      );
   };
 
     return (
