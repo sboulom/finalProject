@@ -8,8 +8,7 @@ import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import AddABeer from "./pages/AddABeer";
 import "./app.css";
-import Spinner from "./components/Spinner/spinner";
-
+// import Spinner from "./components/Spinner/spinner";
 import Jumbotron from "./components/Jumbotron"
 
 
@@ -21,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/register" component={Register} />
-
+          {/* <Spinner /> */}
           <Route path="/signin" component={SignIn} />
           <Route path="/browse" component={BrowseBeers} />
           <Route path="/addabeer" component={AddABeer} />
