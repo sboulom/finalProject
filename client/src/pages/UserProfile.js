@@ -27,7 +27,7 @@ function UserProfile() {
   return (
     <div>
       <Jumbotron fluid className="jumboUser mb-1">
-        <Container className="">Beer Collection</Container>
+        <Container className="">My Beer Collection</Container>
       </Jumbotron>
 
       <Container className="">

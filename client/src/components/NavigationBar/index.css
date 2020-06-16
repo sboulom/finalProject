@@ -22,3 +22,14 @@
 .navFont {
   font-family: "Roboto Condensed", sans-serif;
 }
+
+/* Mobile Breakpoints */
+/* Text is removed on XS and SM Screens */
+@media only screen and (max-width: 768px) {
+  .navTextMobile {
+    display: none;
+  }
+  .navIconPadding {
+    padding: 0 2%;
+  }
+}

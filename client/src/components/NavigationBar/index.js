@@ -13,19 +13,18 @@ export const NavigationBar = () => (
         alt="beerIcon logo"
       />
     </Navbar.Brand>
-    <Navbar.Brand>TeamBeer</Navbar.Brand>
-    <Nav className="mr-auto" />
-    <Nav.Link href="/">
+    <Navbar.Brand className="">TeamBeer</Navbar.Brand>
+    <Nav.Link href="/" className="navIconPadding">
       <i className="fas fa-house-user mx-1"></i>
-      <Navbar.Text>User Profile</Navbar.Text>
+      <Navbar.Text className="navTextMobile">User Profile</Navbar.Text>
     </Nav.Link>
-    <Nav.Link href="/Browse">
+    <Nav.Link href="/Browse" className="navIconPadding">
       <i className="fas fa-beer mx-1"></i>
-      <Navbar.Text>Browse Beers</Navbar.Text>
+      <Navbar.Text className="navTextMobile">Browse Beers</Navbar.Text>
     </Nav.Link>
-    <Nav.Link href="/addabeer">
+    <Nav.Link href="/addabeer" className="mr-auto navIconPadding">
       <i className="fas fa-plus-circle mx-1"></i>
-      <Navbar.Text>Add Custom Beer</Navbar.Text>
+      <Navbar.Text className="navTextMobile">Add Custom Beer</Navbar.Text>
     </Nav.Link>
     <Nav.Link href="/signin">
       <Navbar.Text>Sign In</Navbar.Text>
