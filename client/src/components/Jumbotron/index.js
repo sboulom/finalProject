@@ -1,16 +1,15 @@
-import React from 'react'
-import {Jumbotron, Container, Carousel} from 'react-bootstrap'
-import './index.css'
+import React from "react";
+import { Jumbotron, Container } from "react-bootstrap";
+import "./index.css";
 
 function Jumbo() {
   return (
     <div>
       <Jumbotron fluid className="display">
-        <Container className="jumbo">
-      </Container>
+        <Container className="jumbo">hello</Container>
       </Jumbotron>
     </div>
-  )
+  );
 }
 
-export default Jumbo
+export default Jumbo;

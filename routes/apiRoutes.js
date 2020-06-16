@@ -79,11 +79,15 @@ router.get("/userdata", (req, res) => {
     .catch(err => res.status(422).end());
 });
 
-router.put('/add_browsed_beer/:user_id', (req, res) => {
+router
+.put('/add_browsed_beer/:id', (req, res) => {
+  console.log("test C");
   // const name = req.body.name
   // const newBeer = new db.Beer({name})
 
-  console.log("test");
+  db.UserData.findOneAndUpdate({ username: req.params.id }, req.body)
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
 
   // var user_to_update = this.$route.params.user_id; //should be Alice
 
