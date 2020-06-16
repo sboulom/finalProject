@@ -1,5 +1,4 @@
 import React from "react";
-// import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavigationBar } from "./components/NavigationBar";
 import Register from "./pages/Register";
@@ -8,14 +7,13 @@ import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import CustomBeer from "./pages/CustomBeer";
 import "./app.css";
-
-import Jumbotron from "./components/Jumbotron";
+// import Jumbotron from "./components/Jumbotron";
 
 function App() {
   return (
     <div className="wrapper">
       <NavigationBar />
-      <Jumbotron />
+      {/* <Jumbotron /> */}
       <Router>
         <Switch>
           <Route path="/register" component={Register} />

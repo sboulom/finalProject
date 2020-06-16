@@ -5,20 +5,18 @@
   justify-content: space-between;
 }
 
-.userWrapper{
-    padding-top: 15vh;
+.userWrapper {
+  padding-top: 15vh;
 }
 .card-title {
   border: thick;
   color: black;
 }
 
-.card{
-    background-color: white;
-    /* box-shadow: 5px 10px 8px #888888; */
-    
-    margin: 1%;
-    cursor: pointer;
+.card {
+  background-color: white;
+  margin: 1%;
+  cursor: pointer;
 }
 .Container {
   position: absolute;
@@ -26,15 +24,20 @@
 }
 
 h1 {
-    color: black;
+  color: black;
 }
 
 ul {
   color: black;
 }
 
+.jumboUser {
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background: url("/assets/beerImage2.jpg");
+  height: 40vh;
+}
+
 /* .statsDiv {
     text-align: center;
 } */
-
-

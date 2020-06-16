@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Jumbotron, Container, Row } from "react-bootstrap";
 import API from "../utils/API.js";
 import BeerCard from "../components/BeerCard";
 
@@ -25,21 +25,23 @@ function UserProfile() {
   }, []);
 
   return (
-    <Container className="">
-      <div>
-        <h1>Beer Collection</h1>
-      </div>
+    <div>
+      <Jumbotron fluid className="jumboUser mb-1">
+        <Container className="">Beer Collection</Container>
+      </Jumbotron>
 
-      {!beers.length ? (
-        <h1 className="text-center">No Beers to Display</h1>
-      ) : (
-        <Row>
-          {beers.slice(0, 12).map((beer, index) => {
-            return BeerCard(beer);
-          })}
-        </Row>
-      )}
-    </Container>
+      <Container className="">
+        {!beers.length ? (
+          <h1 className="text-center">No Beers to Display</h1>
+        ) : (
+          <Row>
+            {beers.slice(0, 12).map((beer, index) => {
+              return BeerCard(beer);
+            })}
+          </Row>
+        )}
+      </Container>
+    </div>
   );
 }
 
