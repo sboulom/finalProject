@@ -11,36 +11,39 @@ import "./BrowseBeers.css";
 function BrowseBeers() {
   // For API -> Card Usage:
   const [beers, setBeers] = useState({ data: [] });
-  // const [beers, setBeers] = useState([]);
-  const [beerSearch, setBeerSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   // For API -> Card Usage:
   useEffect(() => {
-    API.getBeers()
-      .then((res) => {
-        setBeers(res.data);
-        // console.log(res.data[0]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    API.getBeers().then((res) => {
+      setBeers(res.data);
+    });
     console.log("useEffect has been called");
   }, []);
+
+  useEffect(() => {
+    const results = beers.data
+      .slice(0, 6)
+      .filter((beer) => beer.name.toLowerCase().includes(searchTerm));
+    setSearchResults(results);
+  }, [searchTerm]);
 
   // Destructure the name and value properties off of event.target
   // Update the appropriate state
   const handleInputChange = (event) => {
     const { value } = event.target;
-    setBeerSearch(value);
+    setSearchTerm(value);
   };
 
   // When the form is submitted, prevent its default behavior
   //  Get BeersLocal update the BeersLocal state
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(beerSearch);
-    API.getBeersLocal(beerSearch)
-      .then((res) => setBeers(res.data))
+    console.log(searchTerm);
+
+    API.getBeersLocal(searchTerm)
+      .then((res) => setSearchResults(res.data))
       .catch((err) => console.log(err));
   };
 
@@ -55,8 +58,8 @@ function BrowseBeers() {
             <Row>
               <Col xs={12} sm={12} md={10} lg={10} xl={10}>
                 <Input
-                  name="BeerSearch"
-                  value={beerSearch}
+                  name="SearchTerm"
+                  value={searchTerm}
                   onChange={handleInputChange}
                   placeholder="Search For a Beer"
                 />
@@ -74,14 +77,19 @@ function BrowseBeers() {
           </form>
         </Col>
       </Row>
-      {/* {!beers.length ? (
-        <h1 className="text-center">No Beers to Display</h1>
-      ) : ( */}
-      <Row>
-        {beers.data.slice(0, 6).map((beer, index) => {
-          return BrowseBeerCard(beer);
-        })}
-      </Row>
+      {searchResults.length ? (
+        <Row>
+          {searchResults.map((beer, index) => {
+            return BrowseBeerCard(beer);
+          })}
+        </Row>
+      ) : (
+        <Row>
+          {beers.data.slice(0, 6).map((beer, index) => {
+            return BrowseBeerCard(beer);
+          })}
+        </Row>
+      )}
     </Container>
   );
 }
