@@ -24,7 +24,7 @@ export const NavigationBar = () => (
       <Navbar.Text>Browse Beers</Navbar.Text>
     </Nav.Link>
     <Nav.Link href="/addabeer">
-      <i className="fas fa-plus-square mx-1"></i>
+      <i className="fas fa-plus-circle mx-1"></i>
       <Navbar.Text>Add Custom Beer</Navbar.Text>
     </Nav.Link>
     <Nav.Link href="/signin">
