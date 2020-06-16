@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Jumbotron, Container, Row } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import API from "../utils/API.js";
 import BeerCard from "../components/BeerCard";
-
 import "./UserProfile.css";
 
 function UserProfile() {
@@ -26,8 +25,12 @@ function UserProfile() {
 
   return (
     <div>
-      <Jumbotron fluid className="jumboUser mb-1">
-        <Container className="">My Beer Collection</Container>
+      <Jumbotron fluid className="jumboUserPage mb-1">
+        <Container className="banner mx-0 px-0">
+          <Row>
+            <Col className="jumboTitle">My Beer Collection</Col>
+          </Row>
+        </Container>
       </Jumbotron>
 
       <Container className="">
