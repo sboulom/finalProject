@@ -1,7 +1,7 @@
 import React from "react";
 // originally tried "useState" on the top
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import "../pages/AddABeer.css";
+import "../pages/CustomBeer.css";
 
 const AddABeer = () => {
   return (
