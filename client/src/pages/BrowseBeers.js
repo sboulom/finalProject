@@ -49,14 +49,15 @@ function BrowseBeers() {
 
   return (
     <div>
-      <Jumbotron fluid className="jumboBrowse mb-2">
-        <Container className="">Browse Beers</Container>
+      <Jumbotron fluid className="jumboBrowsePage mb-1">
+        <Container className="banner mx-0 px-0">
+          <Row>
+            <Col className="jumboTitle">Browse Beers</Col>
+          </Row>
+        </Container>
       </Jumbotron>
 
       <Container className=" py-0">
-        {/* <div>
-          <h1>Browse Beer</h1>
-        </div> */}
         <Row>
           <Col>
             <form>
