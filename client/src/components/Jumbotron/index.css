@@ -1,15 +1,7 @@
-/* .display {
+.display {
   background-repeat: no-repeat;
   background-size: cover !important;
   background: url('/assets/beerImage2.jpg');
   height: 40vh;
   opacity: .9;
-} */
-.cImg {
-  height: 35vh;
-  width: 200vh;
-  background-size: cover !important;
-}
-h1, h2{
-  text-align: center;
 }

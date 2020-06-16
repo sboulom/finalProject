@@ -30,10 +30,12 @@ mongoose.connect(
 //     process.exit(1);
 //   });
 
-const userDataSeed = [
+const userSeed = [
   {
     username:"Alice",
     password: "wonderland",
+    email: "rabbithole@yahoo.com",
+    name: "Alice Margatroid",
     beerCollection: [
       {
         picture: "",
@@ -56,6 +58,8 @@ const userDataSeed = [
   {
     username:"Bob",
     password: "builder",
+    email: "wecanfixit@google.com",
+    name: "Bob the Builder",
     beerCollection: [
       {
         picture: "",
@@ -79,7 +83,7 @@ const userDataSeed = [
 
 //seeding user data
 db.UserData.remove({}) //clear database
-  .then(() => db.UserData.collection.insertMany(userDataSeed))
+  .then(() => db.UserData.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

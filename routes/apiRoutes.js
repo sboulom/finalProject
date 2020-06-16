@@ -75,8 +75,27 @@ router.get("/userdata", (req, res) => {
     .catch(err => res.status(422).end());
 });
 
-router.get("/user", (req, res) => {
-  
+router
+.put('/add_browsed_beer/:id', (req, res) => {
+  console.log("test C");
+  // const name = req.body.name
+  // const newBeer = new db.Beer({name})
+
+  db.UserData.findOneAndUpdate({ username: req.params.id }, req.body)
+  .then(dbModel => res.json(dbModel))
+  .catch(err => res.status(422).json(err));
+
+  // var user_to_update = this.$route.params.user_id; //should be Alice
+
+  // var converted_beer = req.converted_beer;
+
+  // console.log("updating user " + user_to_update);
+  // console.log(JSON.stringify(converted_beer));
+
+  // newBeer
+  //   .save()
+  //   .then(() => res.json('BeerTest added!'))
+  //   .catch((err) => res.status(400).json('Error: ' + err))
 })
 
 module.exports = router;
