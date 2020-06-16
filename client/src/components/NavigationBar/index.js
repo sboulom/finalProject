@@ -1,10 +1,8 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-// import Jumbotron from '../Jumbotron'
 import "./index.css";
 
 export const NavigationBar = () => (
-  // <div className="navbar navbar-expand">
   <Navbar className="innerNavbar" bg="light" expand="lg">
     <Navbar.Brand className="mx-1">
       <img
@@ -16,21 +14,24 @@ export const NavigationBar = () => (
       />
     </Navbar.Brand>
     <Navbar.Brand>TeamBeer</Navbar.Brand>
-    {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-    {/* <Navbar.Collapse id="basic-navbar-nav"> */}
     <Nav className="mr-auto" />
     <Nav.Link href="/">
-      <i class="fas fa-house-user"> User Profile</i>
+      <i className="fas fa-house-user mx-1"></i>
+      <Navbar.Text>User Profile</Navbar.Text>
     </Nav.Link>
     <Nav.Link href="/Browse">
-      <i class="fas fa-beer"> Browse Beers</i>
+      <i className="fas fa-beer mx-1"></i>
+      <Navbar.Text>Browse Beers</Navbar.Text>
     </Nav.Link>
     <Nav.Link href="/addabeer">
-      <i class="fas fa-plus-square"> Add Custom Beer</i>
+      <i className="fas fa-plus-square mx-1"></i>
+      <Navbar.Text>Add Custom Beer</Navbar.Text>
     </Nav.Link>
-    <Nav.Link href="/signin">Sign In</Nav.Link>
-    <Nav.Link href="/register">Register</Nav.Link>
-    {/* </Navbar.Collapse> */}
+    <Nav.Link href="/signin">
+      <Navbar.Text>Sign In</Navbar.Text>
+    </Nav.Link>
+    <Nav.Link href="/register">
+      <Navbar.Text>Register</Navbar.Text>
+    </Nav.Link>
   </Navbar>
-  // </div>
 );

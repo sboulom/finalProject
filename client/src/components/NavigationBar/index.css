@@ -1,7 +1,7 @@
 .navbar {
-  background-color: #ffbf00;
+  /* background-color: #ffbf00; */
   /* flex-direction: row; */
-  text-align: right;
+  /* text-align: right; */
   /* width: 100%; */
 }
 
@@ -11,10 +11,14 @@
 }
 
 .nav-link {
-  display: inline;
+  /* display: inline; */
 }
 
 /* icon color  */
 .fas {
-  color: teal;
+  /* color: black; */
+}
+
+.navFont {
+  font-family: "Roboto Condensed", sans-serif;
 }
