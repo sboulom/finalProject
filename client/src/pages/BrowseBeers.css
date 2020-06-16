@@ -1,13 +1,13 @@
 .beerContainer {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-family: "Courier Prime", monospace;
+  font-family: "Courier Prime", monospace; */
 }
 
 .browseBeer {
-  padding-top: 20vh;
+  /* padding-top: 20vh; */
 }
 
 /* Search Bar Styling */

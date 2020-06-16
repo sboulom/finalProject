@@ -45,7 +45,7 @@ function BrowseBeers() {
   };
 
   return (
-    <Container className="browseBeer">
+    <Container className=" py-0">
       <div>
         <h1>Browse Beer</h1>
       </div>

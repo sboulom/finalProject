@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Container, Row, Col, Card } from "react-bootstrap";
 import API from "../utils/API.js";
 import BeerCard from "../components/BeerCard";
 // import Input from "../components/Input";
 // import Button from "../components/Button";
 // import SearchBar from "../components/SearchBar/searchBar";
 
-import './UserProfile.css'
+import "./UserProfile.css";
 
 function UserProfile() {
-  const [beers, setBeers] = useState({data: []});
+  const [beers, setBeers] = useState({ data: [] });
   // const [beerSearch, setBeerSearch] = useState("");
 
   const currentUser = "Alice";
@@ -45,7 +45,7 @@ function UserProfile() {
   // };
 
   return (
-    <Container className="browseBeer">
+    <Container className="">
       <div>
         <h1>Beer Collection</h1>
       </div>
@@ -71,11 +71,11 @@ function UserProfile() {
       {!beers.length ? (
         <h1 className="text-center">No Beers to Display</h1>
       ) : (
-      <Row>
-        {beers.slice(0, 12).map((beer, index) => {
-          return BeerCard(beer);
-        })}
-      </Row>
+        <Row>
+          {beers.slice(0, 12).map((beer, index) => {
+            return BeerCard(beer);
+          })}
+        </Row>
       )}
       {/* <Row>
         <SearchBar></SearchBar>
@@ -107,14 +107,11 @@ function UserProfile() {
     //             </Card>
     //           );
     //         })}
-        
-        
+
     //     </div>
     //     </Col>
     //   </Row>
     // </Container>
-
-
 
     // <div className='wrapper'>
     //   <h1>User Profile</h1>
@@ -125,7 +122,7 @@ function UserProfile() {
     //         <Card.Body>
     //           <Card.Title>Name of Beer</Card.Title>
     //           <Card.Text>
-    //            all the tuff 
+    //            all the tuff
     //           </Card.Text>
     //         </Card.Body>
     //       </Card>
@@ -139,11 +136,11 @@ function UserProfile() {
     //           </Card.Text>
     //         </Card.Body>
     //       </Card>
-         
+
     //     </CardGroup>
     //   </Container>
     // </div>
-  )
+  );
 }
 
-export default UserProfile
+export default UserProfile;
