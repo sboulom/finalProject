@@ -5,7 +5,7 @@ import API from "../utils/API"
 
 const SignIn = () => {
   const [ state, setState ] = useState({ 
-    email: "",
+    username: "",
     password: "",
   })
     const  handleChange = event => {
@@ -17,17 +17,20 @@ const SignIn = () => {
     
   }
   const handleSubmit = event => {
-    console.log("state.email", state.email)
+    console.log("state.username", state.username)
     console.log("state.password", state.password)
     const userData = {
       username: state.username,
-      password: state.password,
-      email: state.email,
-      name: state.name
+      password: state.password
     }
     API.login(userData).then(results=>{
+      console.log("log in success!")
       console.log(results)
+      window.location.href="/userprofile"
     })
+    .catch(error => {
+      console.log(error)
+    } )
   }
   
   return (
@@ -38,11 +41,11 @@ const SignIn = () => {
             <Card.Title>Sign In</Card.Title>
             <InputGroup className='mb-3'>
               <FormControl
-                placeholder='Email'
-                aria-label='Email'
+                placeholder='User Name'
+                aria-label='User Name'
                 aria-describedby='basic-addon1'
-                name = "email"
-                value = { state.email }
+                name = "username"
+                value = { state.username }
                 onChange = { handleChange }
               />
               </InputGroup>

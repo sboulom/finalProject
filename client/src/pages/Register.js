@@ -30,7 +30,8 @@ const Register = () => {
       name: state.name
     }
     API.signup(userData).then(results=>{
-      // console.log(results)
+      window.location.href="/userprofile"
+
     })
   }
   
