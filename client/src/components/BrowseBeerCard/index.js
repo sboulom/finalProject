@@ -35,7 +35,10 @@ function BrowseBeerCard(beer) {
         <Card className="cardHeight cardColor">
           <Card.Title className="ml-auto">
             <h4>
-              <i className="fas fa-plus-circle" onClick={handlePlusButton} />
+              <i
+                className="fas fa-plus-circle mx-1"
+                onClick={handlePlusButton}
+              />
             </h4>
           </Card.Title>
           <Card.Img
