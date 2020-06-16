@@ -1,21 +1,42 @@
 .navbar {
-    background-color:#ffbf00;  
-    /* flex-direction: row; */
-    text-align: right;
-    /* width: 100%; */
-  
+  /* background-color: #ffbf00; */
+  /* flex-direction: row; */
+  /* text-align: right; */
+  /* width: 100%; */
 }
 
 .innerNavbar {
-    border-radius: 25px;
-    /* background-color: #FAE96F */
+  /* border-radius: 25px; */
+  /* background-color: #FAE96F */
 }
 
 .nav-link {
-    display: inline;
+  /* display: inline; */
 }
 
 /* icon color  */
 .fas {
-    color: teal;
+  color: lightskyblue;
+}
+
+.navFont {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Mobile Breakpoints */
+/* Text is removed from links on XS and SM screens */
+@media only screen and (max-width: 425px) {
+  .navTextMobile {
+    display: none;
+  }
+  .navIconPadding {
+    padding: 0 2%;
+  }
+}
+
+/* NavBar padding is adjusted for SM screens */
+@media only screen and (max-width: 375px) {
+  .navPaddingMobile {
+    padding: 1%;
+  }
 }
