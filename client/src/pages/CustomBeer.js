@@ -1,16 +1,14 @@
 import React from "react";
 // originally tried "useState" on the top
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import "../pages/AddABeer.css";
+import "../pages/CustomBeer.css";
 
 const AddABeer = () => {
-  // const [beers, setBeers] = useState({ data: [] });
-
   return (
-    <div >
-      <Container >
+    <div>
+      <Container>
         <Row>
-          <Col xs={6} sm={4} md={3} lg={8} xl={8} className="my-1 px-0" className="addBeer" >
+          <Col xs={6} sm={4} md={3} lg={8} xl={8} className="my-1 px-0 addBeer">
             <Card className="cardHeight">
               <Card className="cardHeight cardColor">
                 <Card.Title className="ml-auto">
@@ -75,15 +73,14 @@ const AddABeer = () => {
                     <Form.Label>Beer Description</Form.Label>
                     <Form.Control as="textarea" rows="3" />
                   </Form.Group>
-                  <div >
-                  <Container  >
-                    <Row >
-                      <Col className="button">
-                      <Button variant="success" >Add Beer</Button>{" "}
-
-                      </Col>
-                    </Row>
-                  </Container>
+                  <div>
+                    <Container>
+                      <Row>
+                        <Col className="button">
+                          <Button variant="success">Add Beer</Button>{" "}
+                        </Col>
+                      </Row>
+                    </Container>
                   </div>
                 </Card.Body>
               </Card>
@@ -96,4 +93,3 @@ const AddABeer = () => {
 };
 
 export default AddABeer;
-

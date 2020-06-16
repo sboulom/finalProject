@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
@@ -48,49 +48,56 @@ function BrowseBeers() {
   };
 
   return (
-    <Container className="browseBeer">
-      <div>
-        <h1>Browse Beer</h1>
-      </div>
-      <Row>
-        <Col>
-          <form>
-            <Row>
-              <Col xs={12} sm={12} md={10} lg={10} xl={10}>
-                <Input
-                  name="SearchTerm"
-                  value={searchTerm}
-                  onChange={handleInputChange}
-                  placeholder="Search For a Beer"
-                />
-              </Col>
-              <Col xs={12} sm={12} md={2} lg={2} xl={2}>
-                <Button
-                  type="success"
-                  onClick={handleFormSubmit}
-                  className="searchWidth my-1"
-                >
-                  Search
-                </Button>
-              </Col>
-            </Row>
-          </form>
-        </Col>
-      </Row>
-      {searchResults.length ? (
+    <div>
+      <Jumbotron fluid className="jumboBrowsePage mb-1">
+        <Container className="banner mx-0 px-0">
+          <Row>
+            <Col className="jumboTitle">Browse Beers</Col>
+          </Row>
+        </Container>
+      </Jumbotron>
+
+      <Container className=" py-0">
         <Row>
-          {searchResults.map((beer, index) => {
-            return BrowseBeerCard(beer);
-          })}
+          <Col>
+            <form>
+              <Row>
+                <Col xs={12} sm={12} md={10} lg={10} xl={10}>
+                  <Input
+                    name="SearchTerm"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    placeholder="Search For a Beer"
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={2} lg={2} xl={2}>
+                  <Button
+                    type="success"
+                    onClick={handleFormSubmit}
+                    className="searchWidth my-auto"
+                  >
+                    Search
+                  </Button>
+                </Col>
+              </Row>
+            </form>
+          </Col>
         </Row>
-      ) : (
-        <Row>
-          {beers.data.slice(0, 6).map((beer, index) => {
-            return BrowseBeerCard(beer);
-          })}
-        </Row>
-      )}
-    </Container>
+        {searchResults.length ? (
+          <Row>
+            {searchResults.map((beer, index) => {
+              return BrowseBeerCard(beer);
+            })}
+          </Row>
+        ) : (
+          <Row>
+            {beers.data.slice(0, 6).map((beer, index) => {
+              return BrowseBeerCard(beer);
+            })}
+          </Row>
+        )}
+      </Container>
+    </div>
   );
 }
 export default BrowseBeers;
