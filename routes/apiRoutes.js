@@ -28,9 +28,13 @@ router.post('/register', function (req, res) {
 router.post('/login', passport.authenticate('local'), function (req, res) {
   res.send(req.user)
 })
-
+// router.post('/login', function (req, res) {
+//   console.log("test page log in")
+//   res.send(req.user)
+// })
 // Endpoint to get current user
 router.get('/user', function (req, res) {
+  console.log("user")
   res.send(req.user)
 })
 

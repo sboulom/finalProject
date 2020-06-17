@@ -13,7 +13,7 @@ export default {
   },
 
   getCurrentUserData: function(query) {
-    return axios.get("/api/userdata", { params: { q: query } });
+    return axios.get("/api/user");
   },
 
   signup: function(userData){

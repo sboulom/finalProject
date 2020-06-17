@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import "./index.css";
+import API from "../../utils/API"
 
-export const NavigationBar = () => (
+export const NavigationBar = () => {
+    const [state, setState]= useState({
+    name: ""
+  }) 
+  useEffect(()=>{
+    API.getCurrentUserData().then((user)=> {
+      console.log("user", user)
+      setState({
+        name: user.data.name
+      })
+    })
+    },[])
+    const logOut = () => {
+      API.logOut().then(()=>{
+        window.location.href="/"
+      })
+    }
+    return(
+      <div>
   <Navbar collapseOnSelect className="navPaddingMobile" bg="light" expand="lg">
     <Navbar.Brand className="mx-1">
       <img
@@ -36,6 +55,9 @@ export const NavigationBar = () => (
           <Navbar.Text>Register</Navbar.Text>
         </Nav.Link>
       </Nav>
+
     </Navbar.Collapse>
   </Navbar>
-);
+  </div>
+  )
+  }
