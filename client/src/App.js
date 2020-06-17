@@ -7,6 +7,8 @@ import UserProfile from "./pages/UserProfile";
 import BrowseBeers from "./pages/BrowseBeers";
 import CustomBeer from "./pages/CustomBeer";
 import "./app.css";
+import Jumbotron from "./components/Jumbotron"
+
 // import Jumbotron from "./components/Jumbotron";
 
 function App() {
