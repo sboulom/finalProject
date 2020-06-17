@@ -16,12 +16,14 @@ function App() {
       {/* <Jumbotron /> */}
       <Router>
         <Switch>
-          <Route path="/register" component={Register} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/browse" component={BrowseBeers} />
-          <Route path="/custom" component={CustomBeer} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/" component={SignIn} />
+          <Route exact path="/browse" component={BrowseBeers} />
+          {/* <Route exact path="/addabeer" component={AddABeer} /> */}
           {/* Home route temporarily will route to UserProfile until Auth is set up */}
-          <Route exact path="/" component={UserProfile}></Route>
+          <Route exact path="/userprofile" component={UserProfile}> 
+          {/* <div class="lds-circle"><div></div></div> */}
+          </Route>
         </Switch>
       </Router>
     </div>
