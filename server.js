@@ -5,20 +5,21 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const beersRouter = require("./routes/beers");
 const apiRoutes = require("./routes/apiRoutes");
-const session = require('express-session');
-const passport = require('passport');
+const session = require("express-session");
+const passport = require("passport");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 // Express Session
-app.use(session({
-  secret: 'secret',
-  saveUninitialized: true,
-  resave: true
-}));
+app.use(
+  session({
+    secret: "secret",
+    saveUninitialized: true,
+    resave: true,
+  })
+);
 
 // Passport init
 app.use(passport.initialize());
@@ -26,13 +27,15 @@ app.use(passport.session());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
+  app.use(express.static("build"));
+  app.get("*", function (req, res) {
+    res.sendFile(path.join("build", "index.html"));
+  });
 }
 
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactbeers", 
-  { useUnifiedTopology: true,
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
+  useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
 });
