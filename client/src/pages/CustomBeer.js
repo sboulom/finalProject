@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import "../pages/CustomBeer.css";
 
-const AddABeer = () => {
+const CustomBeer = () => {
   return (
     <div>
       <Container>
@@ -92,4 +92,4 @@ const AddABeer = () => {
   );
 };
 
-export default AddABeer;
+export default CustomBeer;
