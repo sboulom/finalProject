@@ -38,7 +38,7 @@ export const NavigationBar = () => {
           />
         </Navbar.Brand>
         <Navbar.Brand>TeamBeer</Navbar.Brand>
-        <Nav.Link href='/' className='navIconPadding'>
+        <Nav.Link href='/userprofile' className='navIconPadding'>
           <i className='fas fa-house-user mx-1'></i>
           <Navbar.Text className='navTextMobile'>User Profile</Navbar.Text>
         </Nav.Link>

@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import { Col, Card } from "react-bootstrap";
+import ToastsMessage from '../ToastsMessage'
 
 function BrowseBeerCard(beer) {
   var short_desc = beer.style.description.split(".")[0] + "."; //grabs only first sentence from description
@@ -37,7 +38,7 @@ function BrowseBeerCard(beer) {
             <h4>
               <i
                 className="fas fa-plus-circle mx-1"
-                onClick={handlePlusButton}
+                onClick={handlePlusButton, <ToastsMessage />}
               />
             </h4>
           </Card.Title>

@@ -26,7 +26,10 @@ router.post('/register', function (req, res) {
 })
 // Endpoint to login
 router.post('/login', passport.authenticate('local'), function (req, res) {
-  res.send(req.user)
+  console.log(req.user)
+  let newUser = { ...req.user, isAuthenticated: true}
+  res.send(newUser)
+
 })
 // router.post('/login', function (req, res) {
 //   console.log("test page log in")
