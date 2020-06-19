@@ -3,7 +3,7 @@ import { Container, Card, InputGroup, FormControl, Button } from 'react-bootstra
 import './SignIn.css'
 import API from "../utils/API"
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [ state, setState ] = useState({ 
     username: "",
     password: "",
@@ -25,7 +25,7 @@ const SignIn = () => {
     }
     API.login(userData).then(results=>{
       console.log("log in success!")
-      console.log(results)
+      props.history.push("/userprofile")
       window.location.href="/userprofile"
     })
     .catch(error => {
