@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Card,
-  InputGroup,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Container, Card, InputGroup, Form, Button } from "react-bootstrap";
 import "./SignIn.css";
 import API from "../utils/API";
 
@@ -48,7 +42,7 @@ const SignIn = (props) => {
           <Card.Body className="cardArea">
             <Card.Title>Sign In</Card.Title>
             <InputGroup className="mb-3">
-              <FormControl
+              <Form.Control
                 placeholder="User Name"
                 aria-label="User Name"
                 aria-describedby="basic-addon1"
@@ -58,7 +52,8 @@ const SignIn = (props) => {
               />
             </InputGroup>
             <InputGroup className="mb-3">
-              <FormControl
+              <Form.Control
+                type="password"
                 placeholder="Password"
                 aria-label="Password"
                 aria-describedby="basic-addon1"
