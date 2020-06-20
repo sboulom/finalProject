@@ -36,6 +36,18 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
 //   console.log("test page log in")
 //   res.send(req.user)
 // })
+
+router.get("/userdata", (req, res) => {
+  console.log("found userdata");
+  // Use a regular expression to search titles for req.query.q
+  // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
+  db.UserData.find({
+    username: req.query.q,
+  })
+    .then((userdata) => res.json(userdata))
+    .catch((err) => res.status(422).end());
+});
+
 // Endpoint to get current user
 router.get("/user", function (req, res) {
   console.log("user");
@@ -70,16 +82,6 @@ router.get("/beers", (req, res) => {
     name: { $regex: new RegExp(req.query.q, "i") },
   })
     .then((beers) => res.json(beers))
-    .catch((err) => res.status(422).end());
-});
-
-router.get("/userdata", (req, res) => {
-  // Use a regular expression to search titles for req.query.q
-  // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
-  db.UserData.find({
-    username: req.query.q,
-  })
-    .then((userdata) => res.json(userdata))
     .catch((err) => res.status(422).end());
 });
 

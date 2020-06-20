@@ -7,14 +7,14 @@ export const NavigationBar = () => {
   const [state, setState] = useState({
     name: "",
   });
-  useEffect(() => {
-    API.getCurrentUserData().then((user) => {
-      console.log("user", user);
-      setState({
-        name: user.data.name,
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   API.getCurrentUserData().then((user) => {
+  //     console.log('user', user)
+  //     setState({
+  //       name: user.data.name,
+  //     })
+  //   })
+  // }, [])
   const logOut = () => {
     API.logOut().then(() => {
       window.location.href = "/";
