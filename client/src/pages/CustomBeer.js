@@ -10,6 +10,7 @@ const CustomBeer = () => {
   const [ABV, setABV] = useState("");
   const [beerCategory, setBeerCategory] = useState("");
   const [beerDesc, setBeerDesc] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleBeerNameChange = (event) => {
     const { value } = event.target;
@@ -51,6 +52,10 @@ const CustomBeer = () => {
       updated_user_data.beerCollection.push(converted_beer);
       API.addBrowsedBeer(updated_user_data).catch((err) => console.log(err));
     });
+  };
+
+  const simpleFeedback = () => {
+    setIsClicked(true);
   };
 
   return (
@@ -153,8 +158,11 @@ const CustomBeer = () => {
                     <Container>
                       <Row>
                         <Col className="button">
-                          <Button variant="success" onClick={handleFormSubmit}>
-                            Add Beer
+                          <Button
+                            variant="success"
+                            onClick={(handleFormSubmit, simpleFeedback)}
+                          >
+                            {isClicked ? "Beer Added!" : "Add Beer"}
                           </Button>{" "}
                         </Col>
                       </Row>
