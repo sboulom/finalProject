@@ -33,7 +33,7 @@ const SignIn = (props) => {
         console.log("log in success!");
         console.log(results);
         console.log(props);
-        props.history.push("/custom");
+        props.history.push("/userprofile");
         // window.location.href = "/userprofile";
       })
       .catch((error) => {
