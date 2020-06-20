@@ -28,7 +28,7 @@ export const NavigationBar = () => {
         bg="light"
         expand="lg"
       >
-        <Navbar.Brand className="mx-1">
+        <Navbar.Brand href="/userprofile" className="mx-1">
           <img
             src="./assets/beerIcon.png"
             width="30"
@@ -37,7 +37,7 @@ export const NavigationBar = () => {
             alt="beerIcon logo"
           />
         </Navbar.Brand>
-        <Navbar.Brand>The Beer Book</Navbar.Brand>
+        <Navbar.Brand href="/userprofile">The Beer Book</Navbar.Brand>
         <Nav.Link href="/userprofile" className="navIconPadding">
           <i className="fas fa-house-user mx-1"></i>
           <Navbar.Text className="navTextMobile">User Profile</Navbar.Text>
