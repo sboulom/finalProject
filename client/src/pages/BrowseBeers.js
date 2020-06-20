@@ -16,11 +16,14 @@ function BrowseBeers() {
 
   // For API -> Card Usage:
   useEffect(() => {
+  
     API.getBeers().then((res) => {
       setBeers(res.data);
     });
     console.log("useEffect has been called");
   }, []);
+
+
 
   useEffect(() => {
     const results = beers.data
@@ -46,6 +49,8 @@ function BrowseBeers() {
       .then((res) => setSearchResults(res.data))
       .catch((err) => console.log(err));
   };
+
+  
 
   return (
     <div>
