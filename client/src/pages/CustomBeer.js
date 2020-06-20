@@ -10,6 +10,7 @@ const CustomBeer = () => {
   const [ABV, setABV] = useState("");
   const [beerCategory, setBeerCategory] = useState("");
   const [beerDesc, setBeerDesc] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleBeerNameChange = (event) => {
     const { value } = event.target;
@@ -53,11 +54,15 @@ const CustomBeer = () => {
     });
   };
 
+  const simpleFeedback = () => {
+    setIsClicked(true);
+  };
+
   return (
     <div>
       <Container>
         <Row>
-          <Col xs={6} sm={4} md={3} lg={8} xl={8} className="my-1 px-0 addBeer">
+          <Col xs={8} sm={8} md={8} lg={8} xl={8} className="my-1 px-0 addBeer">
             <Card className="cardHeight">
               <Card className="cardHeight cardColor">
                 <Card.Title className="ml-auto">
@@ -69,11 +74,13 @@ const CustomBeer = () => {
                   className="cardImage mx-auto"
                 />
                 <Card.Body>
-                  <Card.Title className="text-center">Name of Beer</Card.Title>
+                  <Card.Title className="text-center">
+                    Add Your Own Beer Review!
+                  </Card.Title>
                   <Card.Title className="subText">
                     <Form>
                       <Form.Group controlId="exampleForm.ControlInput1">
-                        <Form.Label>Name of Beer</Form.Label>
+                        <Form.Label>Name</Form.Label>
                         <Form.Control
                           type="email"
                           placeholder="Enter Beer Name Here"
@@ -84,10 +91,17 @@ const CustomBeer = () => {
                     </Form>
                     <Container>
                       <Row>
-                        <Col>
+                        <Col
+                          xs={6}
+                          sm={6}
+                          md={6}
+                          lg={6}
+                          xl={6}
+                          className="pl-0 pr-1"
+                        >
                           <Form>
                             <Form.Group controlId="exampleForm.ControlInput1">
-                              <Form.Label>Style of Beer</Form.Label>
+                              <Form.Label>Style</Form.Label>
                               <Form.Control
                                 type="email"
                                 placeholder="Enter Beer Style Here"
@@ -97,7 +111,14 @@ const CustomBeer = () => {
                             </Form.Group>
                           </Form>
                         </Col>
-                        <Col>
+                        <Col
+                          xs={6}
+                          sm={6}
+                          md={6}
+                          lg={6}
+                          xl={6}
+                          className="pl-1 pr-0"
+                        >
                           <Form>
                             <Form.Group controlId="exampleForm.ControlInput1">
                               <Form.Label>ABV</Form.Label>
@@ -113,7 +134,7 @@ const CustomBeer = () => {
                       </Row>
                     </Container>
                     <Form.Group controlId="exampleForm.ControlInput1">
-                      <Form.Label>Category of Beer</Form.Label>
+                      <Form.Label>Category</Form.Label>
                       <Form.Control
                         type="email"
                         placeholder="Enter Category of Beer Here"
@@ -137,8 +158,11 @@ const CustomBeer = () => {
                     <Container>
                       <Row>
                         <Col className="button">
-                          <Button variant="success" onClick={handleFormSubmit}>
-                            Add Beer
+                          <Button
+                            variant="success"
+                            onClick={(handleFormSubmit, simpleFeedback)}
+                          >
+                            {isClicked ? "Beer Added!" : "Add Beer"}
                           </Button>{" "}
                         </Col>
                       </Row>
