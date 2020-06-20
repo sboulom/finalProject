@@ -1,6 +1,6 @@
-const router = require('express').Router()
-const db = require('../models')
-const passport = require('passport')
+const router = require("express").Router();
+const db = require("../models");
+const passport = require("passport");
 // router.get("/", (req, res) => {
 //   // Use a regular expression to search titles for req.query.q
 //   // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
@@ -11,86 +11,88 @@ const passport = require('passport')
 //     .catch((err) => res.status(422).end());
 // });
 // Register User
-router.post('/register', function (req, res) {
+router.post("/register", function (req, res) {
   var newUser = new db.User({
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
-  })
+  });
 
   db.User.createUser(newUser, function (err, user) {
-    if (err) throw err
-    res.send(user).end()
-  })
-})
+    if (err) throw err;
+    res.send(user).end();
+  });
+});
 // Endpoint to login
-router.post('/login', passport.authenticate('local'), function (req, res) {
-  console.log(req.user)
-  let newUser = { ...req.user, isAuthenticated: true}
-  res.send(newUser)
+router.post("/login", passport.authenticate("local"), function (req, res) {
+  let newUser = { ...req.user, isAuthenticated: true };
+  // console.log(newUser._doc.name);
+  // res.json(newUser);
+  res.send(newUser);
+});
 
-})
 // router.post('/login', function (req, res) {
 //   console.log("test page log in")
 //   res.send(req.user)
 // })
-// Endpoint to get current user
-router.get('/user', function (req, res) {
-  console.log("user")
-  res.send(req.user)
-})
-
-// Endpoint to logout
-router.get('/logout', function (req, res) {
-  req.logout()
-  res.send(null)
-})
-
-router.route('/').get((req, res) => {
-  db.Beer.find()
-    .then((beers) => res.json(beers))
-    .catch((err) => res.status(400).json('Error: ' + err))
-})
-
-router.route('/add').post((req, res) => {
-  const name = req.body.name
-  const newBeer = new db.Beer({name})
-  newBeer
-    .save()
-    .then(() => res.json('BeerTest added!'))
-    .catch((err) => res.status(400).json('Error: ' + err))
-})
-
-router.get('/beers', (req, res) => {
-  // Use a regular expression to search titles for req.query.q
-  // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
-  db.Beer.find({
-    name: {$regex: new RegExp(req.query.q, 'i')},
-  })
-    .then((beers) => res.json(beers))
-    .catch((err) => res.status(422).end())
-})
 
 router.get("/userdata", (req, res) => {
+  console.log("found userdata");
   // Use a regular expression to search titles for req.query.q
   // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
   db.UserData.find({
-    username: req.query.q
+    username: req.query.q,
   })
-    .then(userdata => res.json(userdata))
-    .catch(err => res.status(422).end());
+    .then((userdata) => res.json(userdata))
+    .catch((err) => res.status(422).end());
 });
 
-router
-.put('/add_browsed_beer/:id', (req, res) => {
+// Endpoint to get current user
+router.get("/user", function (req, res) {
+  console.log("user");
+  res.send(req.user);
+});
+
+// Endpoint to logout
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.send(null);
+});
+
+router.route("/").get((req, res) => {
+  db.Beer.find()
+    .then((beers) => res.json(beers))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/add").post((req, res) => {
+  const name = req.body.name;
+  const newBeer = new db.Beer({ name });
+  newBeer
+    .save()
+    .then(() => res.json("BeerTest added!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.get("/beers", (req, res) => {
+  // Use a regular expression to search titles for req.query.q
+  // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
+  db.Beer.find({
+    name: { $regex: new RegExp(req.query.q, "i") },
+  })
+    .then((beers) => res.json(beers))
+    .catch((err) => res.status(422).end());
+});
+
+router.put("/add_browsed_beer/:id", (req, res) => {
   console.log("test C");
   // const name = req.body.name
   // const newBeer = new db.Beer({name})
 
   db.UserData.findOneAndUpdate({ username: req.params.id }, req.body)
-  .then(dbModel => res.json(dbModel))
-  .catch(err => res.status(422).json(err));
+    .then((dbModel) => res.json(dbModel))
+    .catch((err) => res.status(422).json(err));
 
   // var user_to_update = this.$route.params.user_id; //should be Alice
 
@@ -103,7 +105,6 @@ router
   //   .save()
   //   .then(() => res.json('BeerTest added!'))
   //   .catch((err) => res.status(400).json('Error: ' + err))
-})
+});
 
 module.exports = router;
-

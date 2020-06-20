@@ -19,11 +19,11 @@ function BrowseBeerCard(beer) {
 
   const handlePlusButton = (event) => {
     event.preventDefault();
+    console.log("test handlePlusButton")
 
     //update the current user with the new beer
 
     API.getCurrentUserData(current_user).then((res) => {
-      console.log("test A");
       var updated_user_data = res.data[0];
       updated_user_data.beerCollection.push(converted_beer);
       API.addBrowsedBeer(updated_user_data).catch((err) => console.log(err));
