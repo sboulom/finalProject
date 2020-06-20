@@ -13,7 +13,8 @@ export default {
   },
 
   getCurrentUserData: function(query) {
-    return axios.get("/api/user");
+    console.log("test getCurrentUserData")
+    return axios.get("/api/userdata", { params: { q: query } }); //please do not touch this
   },
 
   signup: function(userData){

@@ -7,14 +7,14 @@ export const NavigationBar = () => {
   const [state, setState] = useState({
     name: '',
   })
-  useEffect(() => {
-    API.getCurrentUserData().then((user) => {
-      console.log('user', user)
-      setState({
-        name: user.data.name,
-      })
-    })
-  }, [])
+  // useEffect(() => {
+  //   API.getCurrentUserData().then((user) => {
+  //     console.log('user', user)
+  //     setState({
+  //       name: user.data.name,
+  //     })
+  //   })
+  // }, [])
   const logOut = () => {
     API.logOut().then(() => {
       window.location.href = '/'
@@ -46,7 +46,7 @@ export const NavigationBar = () => {
           <i className='fas fa-beer mx-1'></i>
           <Navbar.Text className='navTextMobile'>Browse Beers</Navbar.Text>
         </Nav.Link>
-        <Nav.Link href='/addabeer' className='navIconPadding'>
+        <Nav.Link href='/custom' className='navIconPadding'>
           <i className='fas fa-plus-circle mx-1'></i>
           <Navbar.Text className='navTextMobile'>Add Custom Beer</Navbar.Text>
         </Nav.Link>
