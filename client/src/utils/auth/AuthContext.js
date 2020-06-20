@@ -4,5 +4,6 @@ const DeveloperContext = React.createContext({
   email: "",
   username: "",
   beerCollection: [],
+  isAuthenticated: true,
 });
 export default DeveloperContext;
