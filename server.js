@@ -11,7 +11,7 @@ const passport = require("passport");
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-require("dotenv").config();
+// require("dotenv").config();
 
 // Express Session
 app.use(
