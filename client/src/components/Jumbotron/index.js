@@ -6,7 +6,7 @@ function Jumbo() {
   return (
     <div>
       <Jumbotron fluid className="display">
-        <Container className="jumbo">hello</Container>
+        <Container className="jumbo mx-0">hello</Container>
       </Jumbotron>
     </div>
   );
