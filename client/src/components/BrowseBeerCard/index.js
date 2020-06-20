@@ -19,6 +19,7 @@ function BrowseBeerCard(beer) {
 
   const handlePlusButton = (event) => {
     event.preventDefault();
+    console.log("test handlePlusButton")
 
     //update the current user with the new beer
 
@@ -37,7 +38,7 @@ function BrowseBeerCard(beer) {
             <h4>
               <i
                 className="fas fa-plus-circle mx-1"
-                onClick={handlePlusButton, <ToastsMessage />}
+                onClick={handlePlusButton} //, <ToastsMessage />
               />
             </h4>
           </Card.Title>

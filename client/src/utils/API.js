@@ -31,7 +31,7 @@ export default {
   },
 
   addBrowsedBeer: function(userData){
-    console.log("test B")
+    console.log("test addBrowsedBeer")
     console.log(userData);
     return axios.put(`/api/add_browsed_beer/${userData.username}`, userData);
   }
