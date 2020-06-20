@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 const db = require("../models");
-// This file empties the Books collection and inserts the books below
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactbeers"
-);
+
+// This file empties the Beers collection and inserts the books below
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers");
+
 // const beerSeed = [
 //   {
 //     picture: "",
@@ -14,6 +15,7 @@ mongoose.connect(
 //     beerCategory: "categoryTest"
 //   }
 // ];
+
 // //seeding beers
 // db.Beer.remove({}) //clears the database of all data before seeding
 //   .then(() => db.Beer.collection.insertMany(beerSeed))
@@ -25,6 +27,7 @@ mongoose.connect(
 //     console.error(err);
 //     process.exit(1);
 //   });
+
 const userSeed = [
   {
     username:"Alice",
@@ -86,3 +89,4 @@ db.UserData.remove({}) //clear database
     console.error(err);
     process.exit(1);
   });
+

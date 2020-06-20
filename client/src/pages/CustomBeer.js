@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import "../pages/CustomBeer.css";
 import API from "../utils/API";
 
-const AddABeer = () => {
+const CustomBeer = () => {
   const [beerName, setBeerName] = useState("");
   const [beerStyle, setBeerStyle] = useState("");
   const [ABV, setABV] = useState("");
@@ -61,9 +61,7 @@ const AddABeer = () => {
             <Card className="cardHeight">
               <Card className="cardHeight cardColor">
                 <Card.Title className="ml-auto">
-                  <h4>
-                    {/* <i className="fas fa-plus-circle"></i> */}
-                  </h4>
+                  <h4>{/* <i className="fas fa-plus-circle"></i> */}</h4>
                 </Card.Title>
                 <Card.Img
                   variant="top"
@@ -128,21 +126,18 @@ const AddABeer = () => {
                   {/* <Card.Text>Description: {}</Card.Text> */}
                   <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Beer Description</Form.Label>
-                    <Form.Control 
-                      as="textarea" 
+                    <Form.Control
+                      as="textarea"
                       rows="3"
                       value={beerDesc}
                       onChange={handleBeerDescChange}
-                     />
+                    />
                   </Form.Group>
                   <div>
                     <Container>
                       <Row>
                         <Col className="button">
-                          <Button 
-                            variant="success" 
-                            onClick={handleFormSubmit}
-                          >
+                          <Button variant="success" onClick={handleFormSubmit}>
                             Add Beer
                           </Button>{" "}
                         </Col>
@@ -159,4 +154,4 @@ const AddABeer = () => {
   );
 };
 
-export default AddABeer;
+export default CustomBeer;
