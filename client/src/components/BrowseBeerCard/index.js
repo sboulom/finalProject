@@ -61,6 +61,7 @@ function BrowseBeerCard(beer) {
             <Card.Text className="subText">
               {converted_beer.beerCategory}
             </Card.Text>
+            
             <Card.Text>Description: {converted_beer.shortDesc}</Card.Text>
           </Card.Body>
         </Card>
