@@ -1,7 +1,7 @@
 import React from "react";
 import API from "../../utils/API";
 import { Col, Card } from "react-bootstrap";
-import ToastsMessage from '../ToastsMessage'
+// import ToastsMessage from '../ToastsMessage'
 
 function BrowseBeerCard(beer) {
   var short_desc = beer.style.description.split(".")[0] + "."; //grabs only first sentence from description
@@ -30,6 +30,10 @@ function BrowseBeerCard(beer) {
     });
   };
 
+  // function changeColor (){
+  //   document.getElementById('cardHeight').style.color = '#A9A9A9'; 
+  // }
+
   return (
     <Col xs={6} sm={4} md={3} lg={2} xl={2} className="my-1 px-0">
       <Card className="cardHeight">
@@ -38,7 +42,7 @@ function BrowseBeerCard(beer) {
             <h4>
               <i
                 className="fas fa-plus-circle mx-1"
-                onClick={handlePlusButton, <ToastsMessage />}
+                onClick={handlePlusButton}
               />
             </h4>
           </Card.Title>
