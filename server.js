@@ -25,20 +25,18 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-//BAD CODE ---------------------------------------------------------------------------
-
 // Serve up static assets (usually on heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+}
+// else {
+//   app.use(express.static(path.join(__dirname, "/client/public")));
 //   app.get("/*", function (req, res) {
-//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+//     res.sendFile(path.join(__dirname, "./client/public/index.html"));
 //   });
-// } else {
-  // app.use(express.static(path.join(__dirname, "/client/public")));
-  // app.get("/*", function (req, res) {
-  //   res.sendFile(path.join(__dirname, "./client/public/index.html"));
-  // });
 // }
 
 // Connect to the Mongo DB
@@ -58,7 +56,7 @@ app.use("/api", apiRoutes);
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("/*", function (req, res) {
-  console.log("calling default route")
+  console.log("calling default route");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
