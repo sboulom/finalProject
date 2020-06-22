@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-let uri = "mongodb://testing123:testing123@ds117806.mlab.com:17806/heroku_87t7h71q"
+let uri = "mongodb://testing123:testing123@ds253418.mlab.com:53418/heroku_zk7xbkr9"
 
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
@@ -58,7 +58,7 @@ app.use("/api", apiRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("/*", function (req, res) {
+app.get("/", function (req, res) {
   console.log("calling default route");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
