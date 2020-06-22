@@ -62,6 +62,10 @@ const SignIn = (props) => {
                 onChange={handleChange}
               />
             </InputGroup>
+            <Card.Text style={{ textAlign: "right" }}>
+              New User?
+              <Card.Link href="/register"> Register Here</Card.Link>
+            </Card.Text>
             <Button variant="outline-secondary" onClick={handleSubmit}>
               Submit
             </Button>

@@ -4,6 +4,7 @@ import { Jumbotron, Container, Row, Col } from "react-bootstrap";
 import API from "../utils/API.js";
 import BeerCard from "../components/BeerCard";
 import "./UserProfile.css";
+import { NavigationBar } from "../components/NavigationBar";
 
 function UserProfile() {
   const [beers, setBeers] = useState({ data: [] });
@@ -25,6 +26,7 @@ function UserProfile() {
 
   return (
     <div>
+      <NavigationBar />
       <Jumbotron fluid className="jumboUserPage mb-1">
         <Container className="banner mx-0 px-0">
           <Row>

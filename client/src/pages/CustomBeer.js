@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import "../pages/CustomBeer.css";
 import API from "../utils/API";
+import { NavigationBar } from "../components/NavigationBar";
 
 const CustomBeer = () => {
   const [beerName, setBeerName] = useState("");
@@ -52,6 +53,8 @@ const CustomBeer = () => {
       updated_user_data.beerCollection.push(converted_beer);
       API.addBrowsedBeer(updated_user_data).catch((err) => console.log(err));
     });
+
+    simpleFeedback();
   };
 
   const simpleFeedback = () => {
@@ -60,6 +63,7 @@ const CustomBeer = () => {
 
   return (
     <div>
+      <NavigationBar />
       <Container>
         <Row>
           <Col xs={8} sm={8} md={8} lg={8} xl={8} className="my-1 px-0 addBeer">
@@ -158,10 +162,7 @@ const CustomBeer = () => {
                     <Container>
                       <Row>
                         <Col className="button">
-                          <Button
-                            variant="success"
-                            onClick={(handleFormSubmit, simpleFeedback)}
-                          >
+                          <Button variant="success" onClick={handleFormSubmit}>
                             {isClicked ? "Beer Added!" : "Add Beer"}
                           </Button>{" "}
                         </Col>
