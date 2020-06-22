@@ -56,7 +56,7 @@ app.use("/api", apiRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("/*", function (req, res) {
+app.get("/", function (req, res) {
   console.log("calling default route");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
