@@ -7,11 +7,12 @@ const PORT = process.env.PORT || 3001;
 const apiRoutes = require("./routes/apiRoutes");
 const session = require("express-session");
 const passport = require("passport");
+const dotenv = require("dotenv");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// require("dotenv").config();
+require("dotenv").config();
 
 // Express Session
 app.use(
@@ -39,11 +40,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-let uri = "mongodb://testing123:testing123@ds117806.mlab.com:17806/heroku_87t7h71q"
-
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
-  mongoose.connect(uri),{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
