@@ -5,6 +5,7 @@ import API from "../utils/API.js";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import BrowseBeerCard from "../components/BrowseBeerCard";
+import { NavigationBar } from "../components/NavigationBar";
 
 import "./BrowseBeers.css";
 
@@ -16,14 +17,11 @@ function BrowseBeers() {
 
   // For API -> Card Usage:
   useEffect(() => {
-  
     API.getBeers().then((res) => {
       setBeers(res.data);
     });
     console.log("useEffect has been called");
   }, []);
-
-
 
   useEffect(() => {
     const results = beers.data
@@ -50,10 +48,9 @@ function BrowseBeers() {
       .catch((err) => console.log(err));
   };
 
-  
-
   return (
     <div>
+      <NavigationBar />
       <Jumbotron fluid className="jumboBrowsePage mb-1">
         <Container className="banner mx-0 px-0">
           <Row>

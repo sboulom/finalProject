@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="wrapper">
       <AuthContext.Provider value={{ isAuthenticated: true }}>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
         <Router>
           <Switch>
             <Route exact path="/register" component={Register} />
