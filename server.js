@@ -3,15 +3,16 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
-// const beersRouter = require("./routes/beers");
+const beersRouter = require("./routes/beers");
 const apiRoutes = require("./routes/apiRoutes");
 const session = require("express-session");
 const passport = require("passport");
+const dotenv = require("dotenv");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// require("dotenv").config();
+require("dotenv").config();
 
 // Express Session
 app.use(
@@ -39,11 +40,8 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-let uri = "mongodb://testing123:testing123@ds117806.mlab.com:17806/heroku_87t7h71q"
-
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
-  mongoose.connect(uri),{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactbeers", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -53,12 +51,12 @@ connection.once("open", function () {
   console.log("MongoDB database connection established successfully");
 });
 
-// app.use("/beers", beersRouter);
+app.use("/beers", beersRouter);
 app.use("/api", apiRoutes);
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("/*", function (req, res) {
+app.get("/", function (req, res) {
   console.log("calling default route");
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });

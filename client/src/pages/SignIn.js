@@ -25,8 +25,8 @@ const SignIn = (props) => {
     API.login(userData)
       .then((results) => {
         console.log("log in success!");
-        console.log(results);
-        console.log(props);
+        console.log(results.data._doc);
+        // console.log(props);
         props.history.push("/userprofile");
         // window.location.href = "/userprofile";
       })

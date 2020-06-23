@@ -27,7 +27,7 @@ router.post("/register", function (req, res) {
 // Endpoint to login
 router.post("/login", passport.authenticate("local"), function (req, res) {
   let newUser = { ...req.user, isAuthenticated: true };
-  // console.log(newUser._doc.name);
+  console.log(newUser._doc.name);
   // res.json(newUser);
   res.send(newUser);
 });
@@ -49,16 +49,43 @@ router.get("/userdata", (req, res) => {
 });
 
 // Endpoint to get current user
-router.get("/user", function (req, res) {
+router.route("/user").get((req, res) => {
   console.log("user");
-  res.send(req.user);
+  db.User.find()
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/addBeer/:id").put((req, res) => {
+  // const picture = req.body.picture;
+  // const name = req.body.name;
+  // const beerStyle = req.body.beerStyle;
+  // const abv = Number(req.body.abv);
+  // const beerCategory = req.body.beerCategory;
+  // const shortDesc = req.body.shortDesc;
+
+  // const newBeer = new User({
+  //   picture,
+  //   name,
+  //   beerStyle,
+  //   abv,
+  //   beerCategory,
+  //   shortDesc,
+  // });
+  // newBeer
+  //   .save()
+  //   .then(() => res.json("Beer card added!"))
+  //   .catch((err) => res.status(400).json("Error: " + err));
+  db.User.findOneAndUpdate({ username: req.params.id }, req.body)
+    .then((dbModel) => res.json(dbModel))
+    .catch((err) => res.status(422).json(err));
 });
 
 // Endpoint to logout
-router.get("/logout", function (req, res) {
-  req.logout();
-  res.send(null);
-});
+// router.get("/logout", function (req, res) {
+//   req.logout();
+//   res.send(null);
+// });
 
 router.route("/").get((req, res) => {
   db.Beer.find()
@@ -86,7 +113,7 @@ router.get("/beers", (req, res) => {
 });
 
 router.put("/add_browsed_beer/:id", (req, res) => {
-  console.log("test C");
+  // console.log("test C");
   // const name = req.body.name
   // const newBeer = new db.Beer({name})
 

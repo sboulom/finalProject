@@ -8,38 +8,44 @@ export default {
     );
   },
 
-  getBeersLocal: function(query) {
+  getBeersLocal: function (query) {
     return axios.get("/api/beers", { params: { q: query } });
   },
 
-  getCurrentUserData: function(query) {
-    console.log("test getCurrentUserData")
+  getUser: function () {
+    return axios.get("/api/user");
+  },
+
+  getCurrentUserData: function (query) {
+    // console.log("test getCurrentUserData");
     return axios.get("/api/userdata", { params: { q: query } }); //please do not touch this
   },
 
-  signup: function(userData){
-    return axios.post("/api/register", userData)
-    
+  signup: function (userData) {
+    return axios.post("/api/register", userData);
   },
 
-  login: function(userData){
-    return axios.post("/api/login", userData)
+  login: function (userData) {
+    return axios.post("/api/login", userData);
   },
 
-  logOut: function(){
-    return axios.get("/api/logout")
+  addBeer: function (userData) {
+    return axios.put(`/api/addBeer/${userData.name}`, userData);
   },
 
-  addBrowsedBeer: function(userData){
-    console.log("test addBrowsedBeer")
-    console.log(userData);
+  // logOut: function () {
+  //   return axios.get("/api/logout");
+  // },
+
+  addBrowsedBeer: function (userData) {
+    // console.log("test addBrowsedBeer");
+    // console.log(userData);
     return axios.put(`/api/add_browsed_beer/${userData.username}`, userData);
-  }
+  },
 
   // getUser: function(){
   //   return axios.get("/api/user")
   // }
-
 };
 
 // export default {
