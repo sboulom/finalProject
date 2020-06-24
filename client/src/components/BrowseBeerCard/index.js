@@ -23,8 +23,8 @@ function BrowseBeerCard(beer) {
     API.getUser().then((res) => {
       console.log(res);
       const user = res.data[0];
-      // console.log(user);
-      // console.log(converted_beer);
+      console.log(user);
+      console.log(converted_beer);
       user.beerCollection.push(converted_beer);
       API.addBeer(user).catch((err) => console.log(err));
     });
