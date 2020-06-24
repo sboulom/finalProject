@@ -94,12 +94,3 @@ If you have any questions about this repo, open an issue or contact the developm
 <img src="https://avatars2.githubusercontent.com/u/57788706?s=64&v=4" alt="avatarNJ" style="border-radius: 16px" width="15" />[Nick Jaquez] nrjaquez@gmail.com  
 <img src="https://avatars2.githubusercontent.com/u/12621320?s=64&v=4" alt="avatarRF" style="border-radius: 16px" width="15" />[Robert Filkin] rfilkin17@gmail.com  
 <img src="https://avatars2.githubusercontent.com/u/57572182?s=64&v=4" alt="avatarSB" style="border-radius: 16px" width="15" />[Steven Boulom] sboulom@gmail.com  
-
-# Team Beer
-For our final group project, we wanted to come up with a beer book where you can learn about different style of beers and which one fits your pallet the best. When you register with our application, you will be able to browse beers and then add them to your profile page. Hope you enjoy!
-
-![Screenshot (225)](https://user-images.githubusercontent.com/57572182/84853689-9f7faa80-b014-11ea-83da-bd2e9740544d.png)
-![Screenshot (226)](https://user-images.githubusercontent.com/57572182/84853694-a0184100-b014-11ea-881a-4cbc086e77bc.png)
-![Screenshot (228)](https://user-images.githubusercontent.com/57572182/84853696-a0184100-b014-11ea-8cb9-a954c5426b3d.png)
-
-
