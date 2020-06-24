@@ -22,7 +22,7 @@ function BrowseBeerCard(beer) {
     console.log("test handlePlusButton");
     API.getUser().then((res) => {
       console.log(res);
-      let user = res.data[0];
+      const user = res.data[0];
       // console.log(user);
       // console.log(converted_beer);
       user.beerCollection.push(converted_beer);
