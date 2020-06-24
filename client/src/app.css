@@ -1,0 +1,9 @@
+body {
+  background-color: #ffbf00;
+}
+
+.wrapper {
+  background-color: #ffbf00;
+  background-size: cover !important;
+  padding-bottom: 20vh;
+}

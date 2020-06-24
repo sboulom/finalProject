@@ -1,0 +1,26 @@
+/* icon color  */
+.fas {
+  color: lightskyblue;
+}
+
+.navFont {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+/* Mobile Breakpoints */
+/* Text is removed from links on XS and SM screens */
+@media only screen and (max-width: 425px) {
+  .navTextMobile {
+    display: none;
+  }
+  .navIconPadding {
+    padding: 0 2%;
+  }
+}
+
+/* NavBar padding is adjusted for SM screens */
+@media only screen and (max-width: 375px) {
+  .navPaddingMobile {
+    padding: 1%;
+  }
+}
