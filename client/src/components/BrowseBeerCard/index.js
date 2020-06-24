@@ -1,12 +1,12 @@
 import React from "react";
 import API from "../../utils/API";
 import { Col, Card } from "react-bootstrap";
-import ToastsMessage from '../ToastsMessage'
+// import ToastsMessage from "../ToastsMessage";
 
 function BrowseBeerCard(beer) {
   var short_desc = beer.style.description.split(".")[0] + "."; //grabs only first sentence from description
 
-  var current_user = "Alice";
+  // var current_user = "test";
 
   var converted_beer = {
     picture: "",
@@ -19,15 +19,23 @@ function BrowseBeerCard(beer) {
 
   const handlePlusButton = (event) => {
     event.preventDefault();
-    console.log("test handlePlusButton")
-
+    console.log("test handlePlusButton");
+    API.getUser().then((res) => {
+      console.log(res);
+      let user = res.data[0];
+      // console.log(user);
+      // console.log(converted_beer);
+      user.beerCollection.push(converted_beer);
+      API.addBeer(user).catch((err) => console.log(err));
+    });
     //update the current user with the new beer
 
-    API.getCurrentUserData(current_user).then((res) => {
-      var updated_user_data = res.data[0];
-      updated_user_data.beerCollection.push(converted_beer);
-      API.addBrowsedBeer(updated_user_data).catch((err) => console.log(err));
-    });
+    // API.getCurrentUserData(current_user).then((res) => {
+    // console.log(res.data[0]);
+    // var updated_user_data = res.data[0];
+    // updated_user_data.beerCollection.push(converted_beer);
+    // API.addBrowsedBeer(updated_user_data).catch((err) => console.log(err));
+    // });
   };
 
   return (

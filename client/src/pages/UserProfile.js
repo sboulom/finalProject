@@ -9,11 +9,12 @@ import { NavigationBar } from "../components/NavigationBar";
 function UserProfile() {
   const [beers, setBeers] = useState({ data: [] });
 
-  const currentUser = "Alice";
+  // const currentUser = "Alice";
 
   // For API -> Card Usage:
   useEffect(() => {
-    API.getCurrentUserData(currentUser)
+    // API.getCurrentUserData(currentUser)
+    API.getUser()
       .then((res) => {
         setBeers(res.data[0].beerCollection);
         console.log("this is res: " + JSON.stringify(res.data[0]));
@@ -21,7 +22,7 @@ function UserProfile() {
       .catch((err) => {
         console.log(err);
       });
-    console.log("useEffect has been called");
+    // console.log("useEffect has been called");
   }, []);
 
   return (
