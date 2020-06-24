@@ -71,6 +71,11 @@ Accessible via: https://floating-tor-57469.herokuapp.com/
 ```
 MONGODB_URI="mongodb://dbtest:dbtest123@ds0132206.mlab.com:13206/heroku_w4qkxp75" 
 ```
+Note: If having trouble adding beerCards to the User Profile, try setting the MONGODB_URI via the console:
+```
+heroku config:set MONGODB_URI="mongodb://dbtest:dbtest123@ds013206.mlab.com:13206/heroku_w4qkxp75"
+```
+
 This will allow you to demo the deployed app using the MongoDB test user.
     
 
