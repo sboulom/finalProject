@@ -7,6 +7,7 @@ function BrowseBeerCard(beer) {
   var short_desc = beer.style.description.split(".")[0] + "."; //grabs only first sentence from description
 
   // var current_user = "test";
+  // const beerArr = []
 
   var converted_beer = {
     picture: "",
@@ -22,9 +23,9 @@ function BrowseBeerCard(beer) {
     console.log("test handlePlusButton");
     API.getUser().then((res) => {
       console.log(res);
-      let user = res.data[0];
-      // console.log(user);
-      // console.log(converted_beer);
+      const user = res.data[0];
+      console.log(user);
+      console.log(converted_beer);
       user.beerCollection.push(converted_beer);
       API.addBeer(user).catch((err) => console.log(err));
     });

@@ -17,6 +17,7 @@ function UserProfile() {
     API.getUser()
       .then((res) => {
         setBeers(res.data[0].beerCollection);
+        console.log(res.data[0]);
         console.log("this is res: " + JSON.stringify(res.data[0]));
       })
       .catch((err) => {
