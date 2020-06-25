@@ -7,6 +7,7 @@ function BrowseBeerCard(beer) {
   var short_desc = beer.style.description.split(".")[0] + "."; //grabs only first sentence from description
 
   // var current_user = "test";
+  // const beerArr = []
 
   var converted_beer = {
     picture: "",
